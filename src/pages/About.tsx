@@ -4,6 +4,7 @@ import { Footer } from '@/components/Footer';
 import { Target, Eye, Rocket, Users, Award, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import aboutHero from '@/assets/about-hero.jpg';
+import aboutCollage from '@/assets/about-collage.jpg';
 import { useNavigate } from 'react-router-dom';
 
 const About = () => {
@@ -27,12 +28,6 @@ const About = () => {
       content: 'Looking ahead, we are focused on expanding our global network of destinations while maintaining our commitment to sustainable and responsible tourism. We plan to introduce innovative travel packages that combine adventure with cultural immersion, implement advanced booking technologies for enhanced customer experience, and strengthen our partnerships with local communities to create more authentic travel experiences. We aim to achieve carbon neutrality in our operations by 2030, expand our team of expert travel consultants, and launch educational programs that promote environmental awareness among travelers. Our goal is to serve over 100,000 happy travelers annually while maintaining the personalized touch that makes TravelWorld special.',
     },
   };
-
-  const stats = [
-    { icon: Users, value: '50,000+', label: 'Happy Travelers' },
-    { icon: Award, value: '15+', label: 'Years Experience' },
-    { icon: Heart, value: '98%', label: 'Customer Satisfaction' },
-  ];
 
   return (
     <div className="min-h-screen">
@@ -116,56 +111,45 @@ const About = () => {
               </div>
             </div>
 
-            {/* Right: Stats & Values */}
-            <div>
-              <div className="bg-gradient-sunset p-8 rounded-2xl text-white mb-8">
-                <h3 className="text-3xl font-bold mb-6">Our Journey in Numbers</h3>
-                <div className="grid gap-6">
-                  {stats.map((stat, index) => {
-                    const Icon = stat.icon;
-                    return (
-                      <div key={index} className="flex items-center gap-4 bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                        <div className="bg-white/20 p-3 rounded-lg">
-                          <Icon className="w-8 h-8" />
-                        </div>
-                        <div>
-                          <div className="text-3xl font-bold">{stat.value}</div>
-                          <div className="text-white/90">{stat.label}</div>
-                        </div>
-                      </div>
-                    );
-                  })}
+            {/* Right: Image Collage */}
+            <div className="relative h-full min-h-[600px]">
+              <div className="rounded-2xl overflow-hidden shadow-large hover-lift h-full">
+                <img 
+                  src={aboutCollage} 
+                  alt="Travel destinations collage showcasing TravelWorld experiences" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Stats Overlay Cards */}
+              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-large">
+                <div className="text-center">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="text-4xl font-bold text-primary">50,000+</div>
+                  <div className="text-sm text-muted-foreground font-medium">Happy Travelers</div>
+                </div>
+              </div>
+              
+              <div className="absolute -top-6 -right-6 bg-gradient-sunset text-white p-6 rounded-xl shadow-large">
+                <div className="text-center">
+                  <div className="flex items-center gap-2 mb-1 justify-center">
+                    <Award className="w-6 h-6" />
+                  </div>
+                  <div className="text-4xl font-bold">15+</div>
+                  <div className="text-sm font-medium">Years Experience</div>
                 </div>
               </div>
 
-              <div className="bg-accent/50 p-8 rounded-2xl border border-accent">
-                <h3 className="text-2xl font-bold mb-4 text-foreground">Why Choose Us?</h3>
-                <ul className="space-y-4 text-muted-foreground">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                    <span>Expert travel consultants with in-depth destination knowledge</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                    <span>Customized itineraries tailored to your preferences and budget</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                    <span>24/7 customer support throughout your journey</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                    <span>Best price guarantee and transparent pricing</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                    <span>Partnerships with trusted hotels and transport providers</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                    <span>Commitment to sustainable and responsible tourism</span>
-                  </li>
-                </ul>
+              <div className="absolute bottom-20 -right-6 bg-primary text-primary-foreground p-6 rounded-xl shadow-large">
+                <div className="text-center">
+                  <div className="flex items-center gap-2 mb-1 justify-center">
+                    <Heart className="w-6 h-6" />
+                  </div>
+                  <div className="text-4xl font-bold">98%</div>
+                  <div className="text-sm font-medium">Satisfaction Rate</div>
+                </div>
               </div>
             </div>
           </div>
