@@ -1,6 +1,7 @@
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
@@ -59,34 +60,34 @@ export const Footer = () => {
             <h4 className="text-lg font-bold mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-300 hover:text-primary transition-smooth">
+                <Link to="/about" className="text-gray-300 hover:text-primary transition-smooth">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-primary transition-smooth">
+                <Link to="/#tours" className="text-gray-300 hover:text-primary transition-smooth">
                   Tour Packages
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-primary transition-smooth">
+                <Link to="/#hotels" className="text-gray-300 hover:text-primary transition-smooth">
                   Hotels
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-primary transition-smooth">
+                <Link to="/#transport" className="text-gray-300 hover:text-primary transition-smooth">
                   Transport
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-primary transition-smooth">
+                <Link to="/#testimonials" className="text-gray-300 hover:text-primary transition-smooth">
                   Testimonials
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-primary transition-smooth">
+                <Link to="/contact" className="text-gray-300 hover:text-primary transition-smooth">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Target, Eye, Rocket } from 'lucide-react';
 import aboutCollage from '@/assets/about-collage.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const subsections = {
   mission: {
@@ -22,6 +23,7 @@ const subsections = {
 };
 
 export const AboutSection = () => {
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState<'mission' | 'vision' | 'goals'>('mission');
   const CurrentIcon = subsections[activeSection].icon;
 
@@ -87,6 +89,7 @@ export const AboutSection = () => {
 
             <Button 
               size="lg"
+              onClick={() => navigate('/about')}
               className="bg-secondary hover:bg-secondary-light text-white font-semibold px-8 shadow-medium hover-lift"
             >
               More About Us
