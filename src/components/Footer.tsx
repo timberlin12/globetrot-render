@@ -65,7 +65,7 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/#tours" className="text-gray-300 hover:text-primary transition-smooth">
+                <Link to="/tours" className="text-gray-300 hover:text-primary transition-smooth">
                   Tour Packages
                 </Link>
               </li>
