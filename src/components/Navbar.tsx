@@ -19,7 +19,7 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '/', type: 'route' },
-    { name: 'Tours', href: '#tours', type: 'hash' },
+    { name: 'Tours', href: '/tours', type: 'route' },
     { name: 'Hotels', href: '#hotels', type: 'hash' },
     { name: 'Transport', href: '#transport', type: 'hash' },
     { name: 'About', href: '/about', type: 'route' },
