@@ -7,7 +7,7 @@ import { MapPin, Hotel, Car, Search } from 'lucide-react';
 
 export const SearchTabs = () => {
   return (
-    <section className="bg-white shadow-large -mt-20 relative z-20 mx-4 md:mx-8 lg:mx-auto lg:max-w-6xl rounded-2xl p-6 md:p-8">
+    <section className="bg-white shadow-large -mt-20 relative z-50 mx-4 md:mx-8 lg:mx-auto lg:max-w-6xl rounded-2xl p-6 md:p-8">
       <Tabs defaultValue="tour" className="w-full">
         <TabsList className="grid w-full grid-cols-3 mb-6 bg-muted p-1 rounded-lg">
           <TabsTrigger value="tour" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-white">
