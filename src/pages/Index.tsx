@@ -5,7 +5,7 @@ import { AboutSection } from '@/components/AboutSection';
 import { TravelPackages } from '@/components/TravelPackages';
 import { Testimonials } from '@/components/Testimonials';
 import { MapSection } from '@/components/MapSection';
-import { Footer } from '@/components/Footer';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
+import Footer from '@/components/Footer';
 import { Target, Eye, Rocket, Users, Award, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import aboutHero from '@/assets/about-hero.jpg';
