@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -291,8 +292,8 @@ const Tours = () => {
                       </div>
                       <div className="flex items-center justify-between pt-2 border-t">
                         <span className="text-2xl font-bold text-primary">₹{tour.price.toLocaleString()}</span>
-                        <Button className="bg-primary hover:bg-primary/90 text-white">
-                          Book Now
+                        <Button className="bg-primary hover:bg-primary/90 text-white" asChild>
+                          <Link to={`/tours/${tour.id}`}>Book Now</Link>
                         </Button>
                       </div>
                     </div>
