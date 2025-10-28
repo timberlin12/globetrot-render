@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -298,7 +299,9 @@ export default function Transport() {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full">Book Now</Button>
+                    <Link to={`/transport/${transport.id}`} className="w-full">
+                      <Button className="w-full">Book Now</Button>
+                    </Link>
                   </CardFooter>
                 </Card>
               ))}

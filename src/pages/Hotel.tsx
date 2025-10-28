@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -306,7 +307,9 @@ export default function Hotel() {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full">Book Now</Button>
+                    <Link to={`/hotel/${hotel.id}`} className="w-full">
+                      <Button className="w-full">Book Now</Button>
+                    </Link>
                   </CardFooter>
                 </Card>
               ))}
