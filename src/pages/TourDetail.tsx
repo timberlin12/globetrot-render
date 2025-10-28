@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -21,6 +21,7 @@ import heroGoa from "@/assets/hero-goa.jpg";
 
 const TourDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(0);
   const [date, setDate] = useState<Date>();
   const [numPersons, setNumPersons] = useState(1);
@@ -393,7 +394,27 @@ const TourDetail = () => {
                     </div>
                   </div>
 
-                  <Button className="w-full" size="lg">
+                  <Button 
+                    className="w-full" 
+                    size="lg"
+                    onClick={() => {
+                      if (!date) {
+                        alert("Please select a booking date");
+                        return;
+                      }
+                      navigate("/checkout", {
+                        state: {
+                          type: "tour",
+                          name: tourData.name,
+                          price: pricePerPerson * numPersons,
+                          quantity: numPersons,
+                          date: format(date, "PPP"),
+                          location: tourData.location,
+                          duration: tourData.duration,
+                        },
+                      });
+                    }}
+                  >
                     Book Now
                   </Button>
                 </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 
 const HotelDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(0);
   const [checkIn, setCheckIn] = useState<Date>();
   const [checkOut, setCheckOut] = useState<Date>();
@@ -392,7 +393,27 @@ const HotelDetail = () => {
                     </div>
                   </div>
 
-                  <Button className="w-full" size="lg">
+                  <Button 
+                    className="w-full" 
+                    size="lg"
+                    onClick={() => {
+                      if (!checkIn || !checkOut) {
+                        alert("Please select check-in and check-out dates");
+                        return;
+                      }
+                      navigate("/checkout", {
+                        state: {
+                          type: "hotel",
+                          name: hotelData.name,
+                          price: totalAmount,
+                          quantity: numRooms,
+                          checkIn: format(checkIn, "PPP"),
+                          checkOut: format(checkOut, "PPP"),
+                          location: hotelData.location,
+                        },
+                      });
+                    }}
+                  >
                     Book Now
                   </Button>
                 </div>

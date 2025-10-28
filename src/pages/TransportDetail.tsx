@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 
 const TransportDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(0);
   const [pickupDate, setPickupDate] = useState<Date>();
   const [returnDate, setReturnDate] = useState<Date>();
@@ -382,7 +383,26 @@ const TransportDetail = () => {
                     </div>
                   </div>
 
-                  <Button className="w-full" size="lg">
+                  <Button 
+                    className="w-full" 
+                    size="lg"
+                    onClick={() => {
+                      if (!pickupDate || !returnDate) {
+                        alert("Please select pickup and return dates");
+                        return;
+                      }
+                      navigate("/checkout", {
+                        state: {
+                          type: "transport",
+                          name: transportData.name,
+                          price: totalAmount,
+                          quantity: days,
+                          pickupDate: format(pickupDate, "PPP"),
+                          returnDate: format(returnDate, "PPP"),
+                        },
+                      });
+                    }}
+                  >
                     Book Now
                   </Button>
                 </div>
