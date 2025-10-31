@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Kashmir Valley Tour - Tour Details</title>
+    <meta name="description" content="Explore Kashmir Valley with our 5 Days / 4 Nights tour package. Experience breathtaking beauty, pristine lakes, and snow-capped mountains with guided tours.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">Travel Agency</div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="hotels.html">Hotels</a></li>
+                <li><a href="transport.html">Transport</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="tour-detail-hero">
+        <img src="images/tour-detail-hero.jpg" alt="Kashmir Valley Tour" class="hero-img">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Amazing Kashmir Valley Tour</h1>
+                <p class="hero-location">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Kashmir, India
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="container tour-gallery">
+        <div class="gallery-grid">
+            <div class="gallery-main">
+                <img src="images/tour-detail-hero.jpg" alt="Main tour" id="mainGalleryImage">
+            </div>
+            <img src="images/hero-kashmir.jpg" alt="Tour 1" class="gallery-thumb" onclick="changeMainImage(1)">
+            <img src="images/hero-manali.jpg" alt="Tour 2" class="gallery-thumb" onclick="changeMainImage(2)">
+            <img src="images/hero-kerala.jpg" alt="Tour 3" class="gallery-thumb" onclick="changeMainImage(3)">
+            <button class="gallery-more-btn" onclick="cycleImages()">View More Images</button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container tour-detail-content">
+        <div class="content-grid">
+            <!-- Left Side - Tour Details -->
+            <div class="tour-details">
+                <!-- Quick Info -->
+                <div class="card quick-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="info-label">Location</p>
+                            <p class="info-value">Kashmir, India</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="info-label">Duration</p>
+                            <p class="info-value">5 Days / 4 Nights</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="info-label">Max People</p>
+                            <p class="info-value">15</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span class="rupee-icon">₹</span>
+                        </div>
+                        <div>
+                            <p class="info-label">Per Person</p>
+                            <p class="info-value">₹15,999</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Planning -->
+                <div class="card">
+                    <h2 class="card-title">Tour Planning</h2>
+                    <div class="tour-planning">
+                        <div class="planning-stop">Delhi</div>
+                        <svg class="planning-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                        <div class="planning-stop">Srinagar</div>
+                        <svg class="planning-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                        <div class="planning-stop">Gulmarg</div>
+                        <svg class="planning-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                        <div class="planning-stop">Pahalgam</div>
+                        <svg class="planning-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                        <div class="planning-stop">Delhi</div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="card">
+                    <h2 class="card-title">About This Tour</h2>
+                    <p class="card-text">Experience the breathtaking beauty of Kashmir with our carefully curated tour package. Explore the stunning valleys, pristine lakes, and snow-capped mountains. This tour includes visits to the most iconic destinations in Kashmir, offering you an unforgettable journey through paradise on earth.</p>
+                </div>
+
+                <!-- Package Inclusions -->
+                <div class="card">
+                    <h2 class="card-title">What's Included</h2>
+                    <ul class="inclusion-list">
+                        <li>
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Accommodation in 4-star hotels
+                        </li>
+                        <li>
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Daily breakfast and dinner
+                        </li>
+                        <li>
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            All transfers and sightseeing by private vehicle
+                        </li>
+                        <li>
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Professional English-speaking guide
+                        </li>
+                        <li>
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Entry fees to monuments
+                        </li>
+                        <li>
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Airport pickup and drop
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Package Exclusions -->
+                <div class="card">
+                    <h2 class="card-title">What's Not Included</h2>
+                    <ul class="exclusion-list">
+                        <li>
+                            <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            International/Domestic airfare
+                        </li>
+                        <li>
+                            <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Personal expenses like tips, laundry, telephone calls
+                        </li>
+                        <li>
+                            <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Optional activities and tours
+                        </li>
+                        <li>
+                            <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Travel insurance
+                        </li>
+                        <li>
+                            <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Any meals not mentioned in inclusions
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tour Highlights -->
+                <div class="card">
+                    <h2 class="card-title">Tour Highlights</h2>
+                    <div class="highlights-grid">
+                        <div class="highlight-item">
+                            <svg class="check-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Shikara ride on Dal Lake
+                        </div>
+                        <div class="highlight-item">
+                            <svg class="check-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Cable car ride in Gulmarg
+                        </div>
+                        <div class="highlight-item">
+                            <svg class="check-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Visit to Betaab Valley
+                        </div>
+                        <div class="highlight-item">
+                            <svg class="check-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Mughal Gardens tour
+                        </div>
+                        <div class="highlight-item">
+                            <svg class="check-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Snow activities in Gulmarg
+                        </div>
+                        <div class="highlight-item">
+                            <svg class="check-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Traditional Kashmiri cuisine experience
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Itinerary -->
+                <div class="card">
+                    <h2 class="card-title">Detailed Itinerary</h2>
+                    <div class="itinerary-accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(0)">
+                                <div class="accordion-header-content">
+                                    <div class="day-badge">1</div>
+                                    <span class="day-title">Arrival in Srinagar</span>
+                                </div>
+                                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Arrive at Srinagar airport and transfer to your hotel. After check-in and rest, enjoy a relaxing Shikara ride on Dal Lake. Visit the famous Mughal Gardens including Nishat Bagh and Shalimar Bagh. Overnight stay in Srinagar.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(1)">
+                                <div class="accordion-header-content">
+                                    <div class="day-badge">2</div>
+                                    <span class="day-title">Srinagar to Gulmarg</span>
+                                </div>
+                                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p>After breakfast, drive to Gulmarg (2-3 hours). Take the Gondola cable car ride to Khilanmarg for stunning mountain views. Enjoy snow activities and explore the meadows. Return to Srinagar for overnight stay.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(2)">
+                                <div class="accordion-header-content">
+                                    <div class="day-badge">3</div>
+                                    <span class="day-title">Srinagar to Pahalgam</span>
+                                </div>
+                                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Drive to Pahalgam (3 hours) via Saffron fields and Awantipora ruins. Visit Betaab Valley and Aru Valley. Enjoy the scenic beauty and optional horse riding. Overnight in Pahalgam.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(3)">
+                                <div class="accordion-header-content">
+                                    <div class="day-badge">4</div>
+                                    <span class="day-title">Pahalgam Exploration</span>
+                                </div>
+                                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Full day to explore Pahalgam. Optional visit to Chandanwari and Baisaran meadows. Evening at leisure to explore local markets. Overnight in Pahalgam.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(4)">
+                                <div class="accordion-header-content">
+                                    <div class="day-badge">5</div>
+                                    <span class="day-title">Departure</span>
+                                </div>
+                                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p>After breakfast, drive back to Srinagar airport for your onward journey. Tour ends with beautiful memories.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Reservation -->
+            <div class="tour-sidebar">
+                <!-- Reserve Your Activity -->
+                <div class="card sticky-card">
+                    <h2 class="card-title">Reserve Your Activity</h2>
+                    
+                    <!-- Online Booking Form -->
+                    <div class="booking-form">
+                        <h3 class="form-subtitle">Online Booking</h3>
+                        
+                        <div class="form-group">
+                            <label for="booking-date">Booking Date</label>
+                            <input type="date" id="booking-date" class="form-input" onchange="updateTotal()">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="num-persons">Number of Persons</label>
+                            <input type="number" id="num-persons" min="1" max="15" value="1" class="form-input" oninput="updateTotal()">
+                        </div>
+
+                        <div class="price-summary">
+                            <div class="price-row">
+                                <span>Price per person:</span>
+                                <span class="price-value">₹15,999</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Number of persons:</span>
+                                <span class="price-value" id="persons-display">1</span>
+                            </div>
+                            <div class="price-total">
+                                <span>Total Amount:</span>
+                                <span class="total-amount" id="total-amount">₹15,999</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-full" onclick="bookNow()">Book Now</button>
+                    </div>
+
+                    <div class="divider">
+                        <span>Or</span>
+                    </div>
+
+                    <!-- Enquiry Form -->
+                    <div class="enquiry-form">
+                        <h3 class="form-subtitle">Send Enquiry</h3>
+                        
+                        <div class="form-group">
+                            <label for="enquiry-name">Your Name</label>
+                            <input type="text" id="enquiry-name" placeholder="Enter your name" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="enquiry-email">Email</label>
+                            <input type="email" id="enquiry-email" placeholder="Enter your email" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="enquiry-phone">Phone</label>
+                            <input type="tel" id="enquiry-phone" placeholder="Enter your phone" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="enquiry-message">Message</label>
+                            <textarea id="enquiry-message" rows="4" placeholder="Tell us about your requirements..." class="form-textarea"></textarea>
+                        </div>
+
+                        <button class="btn btn-outline btn-full" onclick="sendEnquiry()">Send Enquiry</button>
+                    </div>
+                </div>
+
+                <!-- Tour Host -->
+                <div class="card">
+                    <h2 class="card-title">Your Tour Host</h2>
+                    <div class="host-info">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=rajesh" alt="Rajesh Kumar" class="host-avatar">
+                        <div>
+                            <h4 class="host-name">Rajesh Kumar</h4>
+                            <p class="host-role">Tour Guide</p>
+                        </div>
+                    </div>
+                    <div class="host-contact">
+                        <a href="tel:+919876543210" class="contact-link">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            +91 98765 43210
+                        </a>
+                        <button class="btn btn-outline btn-full">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            Contact Host
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title">Travel Agency</h3>
+                    <p class="footer-text">Your trusted partner for unforgettable journeys across India and beyond.</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                        <li><a href="transport.html">Transport</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <p class="footer-text">Email: info@travelagency.com</p>
+                    <p class="footer-text">Phone: +91 1234567890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Travel Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

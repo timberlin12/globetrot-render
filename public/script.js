@@ -271,3 +271,99 @@ if (newsletterForm) {
         newsletterForm.reset();
     });
 }
+
+// ==================== TOUR DETAIL PAGE FUNCTIONS ====================
+
+// Gallery image management
+const tourImages = [
+    'images/tour-detail-hero.jpg',
+    'images/hero-kashmir.jpg',
+    'images/hero-manali.jpg',
+    'images/hero-kerala.jpg',
+    'images/hero-goa.jpg'
+];
+let currentImageIndex = 0;
+
+function changeMainImage(index) {
+    currentImageIndex = index;
+    const mainImage = document.getElementById('mainGalleryImage');
+    if (mainImage) {
+        mainImage.src = tourImages[index];
+    }
+}
+
+function cycleImages() {
+    currentImageIndex = (currentImageIndex + 1) % tourImages.length;
+    changeMainImage(currentImageIndex);
+}
+
+// Accordion functionality
+function toggleAccordion(index) {
+    const items = document.querySelectorAll('.accordion-item');
+    const clickedItem = items[index];
+    const isActive = clickedItem.classList.contains('active');
+    
+    // Close all items
+    items.forEach(item => item.classList.remove('active'));
+    
+    // Open clicked item if it wasn't active
+    if (!isActive) {
+        clickedItem.classList.add('active');
+    }
+}
+
+// Update total price
+function updateTotal() {
+    const pricePerPerson = 15999;
+    const numPersons = parseInt(document.getElementById('num-persons').value) || 1;
+    const totalAmount = pricePerPerson * numPersons;
+    
+    document.getElementById('persons-display').textContent = numPersons;
+    document.getElementById('total-amount').textContent = '₹' + totalAmount.toLocaleString();
+}
+
+// Book now functionality
+function bookNow() {
+    const date = document.getElementById('booking-date').value;
+    const numPersons = document.getElementById('num-persons').value;
+    
+    if (!date) {
+        alert('Please select a booking date');
+        return;
+    }
+    
+    // Store booking details in localStorage
+    const bookingData = {
+        type: 'tour',
+        name: 'Amazing Kashmir Valley Tour',
+        price: 15999 * numPersons,
+        quantity: numPersons,
+        date: date,
+        location: 'Kashmir, India',
+        duration: '5 Days / 4 Nights'
+    };
+    
+    localStorage.setItem('bookingData', JSON.stringify(bookingData));
+    window.location.href = 'checkout.html';
+}
+
+// Send enquiry
+function sendEnquiry() {
+    const name = document.getElementById('enquiry-name').value;
+    const email = document.getElementById('enquiry-email').value;
+    const phone = document.getElementById('enquiry-phone').value;
+    const message = document.getElementById('enquiry-message').value;
+    
+    if (!name || !email || !phone || !message) {
+        alert('Please fill in all fields');
+        return;
+    }
+    
+    alert('Thank you for your enquiry! We will contact you soon.');
+    
+    // Clear form
+    document.getElementById('enquiry-name').value = '';
+    document.getElementById('enquiry-email').value = '';
+    document.getElementById('enquiry-phone').value = '';
+    document.getElementById('enquiry-message').value = '';
+}
