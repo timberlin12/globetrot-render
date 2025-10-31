@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import heroKerala from '@/assets/hero-kerala.jpg';
 import heroRajasthan from '@/assets/hero-rajasthan.jpg';
 import heroManali from '@/assets/hero-manali.jpg';
@@ -126,10 +127,11 @@ export const HeroSlider = () => {
                 </div>
                 
                 <Button 
+                  asChild
                   size="lg"
                   className="bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-6 text-lg shadow-large hover-lift mt-4"
                 >
-                  Book Now
+                  <Link to="/tours">Book Now</Link>
                 </Button>
               </div>
             </div>

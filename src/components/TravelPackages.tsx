@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { MapPin, Calendar, Star, Users, Car } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const tourPackages = [
   {
@@ -121,8 +122,8 @@ export const TravelPackages = () => {
                   </div>
                   <div className="flex items-center justify-between pt-2">
                     <span className="text-2xl font-bold text-primary">{tour.price}</span>
-                    <Button className="bg-primary hover:bg-primary-dark text-white">
-                      Book Trip
+                    <Button asChild className="bg-primary hover:bg-primary-dark text-white">
+                      <Link to={`/tours/${tour.id}`}>Book Trip</Link>
                     </Button>
                   </div>
                 </div>
@@ -158,8 +159,8 @@ export const TravelPackages = () => {
                     <MapPin className="w-4 h-4" />
                     <span className="text-sm">{hotel.location}</span>
                   </div>
-                  <Button className="w-full bg-secondary hover:bg-secondary-light text-white">
-                    Check Availability
+                  <Button asChild className="w-full bg-secondary hover:bg-secondary-light text-white">
+                    <Link to={`/hotel/${hotel.id}`}>Check Availability</Link>
                   </Button>
                 </div>
               </Card>
@@ -191,8 +192,8 @@ export const TravelPackages = () => {
                   </div>
                   <div className="flex items-center justify-between pt-2">
                     <span className="text-2xl font-bold text-accent">{transport.price}</span>
-                    <Button className="bg-accent hover:bg-accent/90 text-white">
-                      Book Now
+                    <Button asChild className="bg-accent hover:bg-accent/90 text-white">
+                      <Link to={`/transport/${transport.id}`}>Book Now</Link>
                     </Button>
                   </div>
                 </div>

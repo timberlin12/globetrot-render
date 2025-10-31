@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
 import { MapPin, Hotel, Car, Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const SearchTabs = () => {
   return (
@@ -77,9 +78,11 @@ export const SearchTabs = () => {
               </SelectContent>
             </Select>
 
-            <Button className="bg-primary hover:bg-primary-dark text-white font-semibold">
-              <Search className="w-4 h-4 mr-2" />
-              Search
+            <Button asChild className="bg-primary hover:bg-primary-dark text-white font-semibold">
+              <Link to="/tours">
+                <Search className="w-4 h-4 mr-2" />
+                Search
+              </Link>
             </Button>
           </div>
         </TabsContent>
@@ -116,9 +119,11 @@ export const SearchTabs = () => {
 
             <Input type="number" placeholder="Guests" defaultValue="2" min="1" />
 
-            <Button className="bg-primary hover:bg-primary-dark text-white font-semibold">
-              <Search className="w-4 h-4 mr-2" />
-              Search
+            <Button asChild className="bg-primary hover:bg-primary-dark text-white font-semibold">
+              <Link to="/hotel">
+                <Search className="w-4 h-4 mr-2" />
+                Search
+              </Link>
             </Button>
           </div>
         </TabsContent>
@@ -141,9 +146,11 @@ export const SearchTabs = () => {
 
             <Input type="date" placeholder="Reserve Date" className="w-full" />
 
-            <Button className="bg-primary hover:bg-primary-dark text-white font-semibold">
-              <Search className="w-4 h-4 mr-2" />
-              Search
+            <Button asChild className="bg-primary hover:bg-primary-dark text-white font-semibold">
+              <Link to="/transport">
+                <Search className="w-4 h-4 mr-2" />
+                Search
+              </Link>
             </Button>
           </div>
         </TabsContent>
