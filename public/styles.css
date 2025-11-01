@@ -33,7 +33,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -624,6 +624,7 @@ h4 { font-size: 1.25rem; }
 
 .section-header {
     margin-bottom: 3rem;
+    text-align: center;
 }
 
 .section-title {
@@ -646,7 +647,9 @@ h4 { font-size: 1.25rem; }
 .section-description {
     color: hsl(var(--muted-foreground));
     font-size: 1.125rem;
-    max-width: 48rem;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* About Section */
