@@ -3985,3 +3985,309 @@ h4 { font-size: 1.25rem; }
         grid-template-columns: 1fr;
     }
 }
+
+/* Transport Page Styles */
+.transport-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.transport-hero .hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.transport-hero .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+}
+
+.transport-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 2rem 1rem;
+}
+
+.transport-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.transport-hero p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Transport Content */
+.transport-content {
+    padding: 3rem 0;
+}
+
+.transport-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Transport Sidebar */
+.transport-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Transport Main */
+.transport-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.transport-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.transport-count {
+    color: #6b7280;
+}
+
+/* Transports Grid */
+.transports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.transport-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.transport-card:hover {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+}
+
+.transport-image-container {
+    position: relative;
+    height: 12rem;
+    overflow: hidden;
+}
+
+.transport-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.transport-card:hover .transport-image {
+    transform: scale(1.05);
+}
+
+.transport-price-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: hsl(var(--primary));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.transport-content {
+    padding: 1rem;
+}
+
+.transport-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.transport-info {
+    display: flex;
+    gap: 1rem;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+}
+
+.transport-info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.transport-type {
+    text-transform: capitalize;
+}
+
+.transport-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.rating-stars svg {
+    fill: hsl(var(--primary));
+    color: hsl(var(--primary));
+}
+
+.rating-value {
+    font-weight: 600;
+}
+
+.rating-reviews {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.transport-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background: #f3f4f6;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+}
+
+.feature-tag svg {
+    flex-shrink: 0;
+}
+
+.transport-footer {
+    padding: 0 1rem 1rem;
+}
+
+/* Popular Transports */
+.popular-transports {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.popular-transport-item {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.popular-transport-image {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+}
+
+.popular-transport-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.popular-transport-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.popular-transport-capacity {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+}
+
+.popular-transport-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.popular-transport-rating svg {
+    fill: hsl(var(--primary));
+    color: hsl(var(--primary));
+}
+
+.popular-transport-rating span {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .transport-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .transport-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .transport-hero h1 {
+        font-size: 2rem;
+    }
+
+    .transport-hero p {
+        font-size: 1rem;
+    }
+
+    .transports-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .transport-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 640px) {
+    .transport-hero {
+        height: 50vh;
+    }
+
+    .transport-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
