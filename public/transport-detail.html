@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Sedan - Transport Rental Details | TravelWorld</title>
+    <meta name="description" content="Book our luxury sedan for comfortable travel. Professional driver, full insurance, and premium amenities included. Rent starting at ₹3,500 per day.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path>
+                    </svg>
+                    <span class="logo-text">TravelWorld</span>
+                </a>
+                <ul class="nav-links desktop-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="hotels.html">Hotels</a></li>
+                    <li><a href="#transport" class="active">Transport</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#book" class="btn btn-primary desktop-nav">Book Now</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="tours.html">Tours</a>
+            <a href="hotels.html">Hotels</a>
+            <a href="#transport" class="active">Transport</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#book" class="btn btn-primary">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="transport-detail-hero" id="transportHero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 id="heroTitle">Luxury Sedan</h1>
+            <p id="heroCapacity" class="hero-subtitle"></p>
+            <div class="hero-rating" id="heroRating"></div>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="container transport-gallery">
+        <div class="gallery-grid">
+            <div class="gallery-main">
+                <img id="mainImage" src="" alt="Main transport" class="gallery-main-img">
+            </div>
+            <div class="gallery-thumbnails" id="galleryThumbnails"></div>
+            <button class="gallery-view-more btn btn-secondary" id="viewMoreBtn">View More Images</button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container transport-detail-content">
+        <div class="transport-detail-layout">
+            <!-- Left Side - Transport Details -->
+            <div class="transport-details">
+                <!-- Description -->
+                <div class="detail-card">
+                    <h2 class="detail-card-title">About This Vehicle</h2>
+                    <div class="detail-card-content">
+                        <p id="vehicleDescription" class="detail-description"></p>
+                    </div>
+                </div>
+
+                <!-- Specifications -->
+                <div class="detail-card">
+                    <h2 class="detail-card-title">Vehicle Specifications</h2>
+                    <div class="detail-card-content">
+                        <div class="specs-grid" id="specsGrid"></div>
+                    </div>
+                </div>
+
+                <!-- Features -->
+                <div class="detail-card">
+                    <h2 class="detail-card-title">Vehicle Features</h2>
+                    <div class="detail-card-content">
+                        <div class="features-grid" id="featuresGrid"></div>
+                    </div>
+                </div>
+
+                <!-- Inclusions -->
+                <div class="detail-card">
+                    <h2 class="detail-card-title">What's Included</h2>
+                    <div class="detail-card-content">
+                        <ul class="inclusions-list" id="inclusionsList"></ul>
+                    </div>
+                </div>
+
+                <!-- Exclusions -->
+                <div class="detail-card">
+                    <h2 class="detail-card-title">Additional Charges</h2>
+                    <div class="detail-card-content">
+                        <ul class="exclusions-list" id="exclusionsList"></ul>
+                    </div>
+                </div>
+
+                <!-- Policies -->
+                <div class="detail-card">
+                    <h2 class="detail-card-title">Rental Policies</h2>
+                    <div class="detail-card-content">
+                        <ul class="policies-list" id="policiesList"></ul>
+                    </div>
+                </div>
+
+                <!-- Popular Routes -->
+                <div class="detail-card">
+                    <h2 class="detail-card-title">Popular Routes</h2>
+                    <div class="detail-card-content">
+                        <div class="routes-list" id="routesList"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Booking Form -->
+            <div class="transport-booking-sidebar">
+                <div class="booking-card sticky-booking">
+                    <h2 class="booking-card-title">Book This Vehicle</h2>
+                    <div class="booking-card-content">
+                        <!-- Online Booking Form -->
+                        <form id="bookingForm" class="booking-form">
+                            <h3 class="booking-section-title">Make a Reservation</h3>
+
+                            <div class="form-group">
+                                <label for="pickupDate">Pickup Date</label>
+                                <input type="date" id="pickupDate" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="returnDate">Return Date</label>
+                                <input type="date" id="returnDate" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pickupLocation">Pickup Location</label>
+                                <input type="text" id="pickupLocation" class="form-input" placeholder="Enter pickup location" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dropLocation">Drop Location</label>
+                                <input type="text" id="dropLocation" class="form-input" placeholder="Enter drop location" required>
+                            </div>
+
+                            <div class="booking-summary">
+                                <div class="summary-row">
+                                    <span class="summary-label">Price per day:</span>
+                                    <span class="summary-value" id="pricePerDay">₹3,500</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span class="summary-label">Number of days:</span>
+                                    <span class="summary-value" id="numberOfDays">1</span>
+                                </div>
+                                <div class="summary-total">
+                                    <span class="summary-total-label">Total Amount:</span>
+                                    <span class="summary-total-value" id="totalAmount">₹3,500</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full btn-lg">Book Now</button>
+                        </form>
+
+                        <div class="divider">
+                            <span>Or</span>
+                        </div>
+
+                        <!-- Enquiry Form -->
+                        <form id="enquiryForm" class="enquiry-form">
+                            <h3 class="booking-section-title">Send Enquiry</h3>
+
+                            <div class="form-group">
+                                <label for="enquiryName">Your Name</label>
+                                <input type="text" id="enquiryName" class="form-input" placeholder="Enter your name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="enquiryEmail">Email</label>
+                                <input type="email" id="enquiryEmail" class="form-input" placeholder="Enter your email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="enquiryPhone">Phone</label>
+                                <input type="tel" id="enquiryPhone" class="form-input" placeholder="Enter your phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="enquiryMessage">Message</label>
+                                <textarea id="enquiryMessage" class="form-textarea" placeholder="Tell us about your travel plans..." rows="4" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-outline btn-full">Send Enquiry</button>
+                        </form>
+
+                        <!-- Contact Info -->
+                        <div class="contact-info-box">
+                            <h4 class="contact-info-title">Need Help?</h4>
+                            <div class="contact-info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                <span>+91 98765 43210</span>
+                            </div>
+                            <div class="contact-info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                </svg>
+                                <span>rental@transportservice.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">TravelWorld</h3>
+                    <p class="footer-description">Your trusted partner for unforgettable travel experiences across India and beyond.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                        <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                        <li><a href="#transport">Transport</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li>123 Travel Street, Mumbai</li>
+                        <li>Maharashtra, India 400001</li>
+                        <li>Phone: +91 123 456 7890</li>
+                        <li>Email: info@travelworld.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="footer-description">Subscribe to get special offers and travel updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelWorld. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="transport-detail.js"></script>
+</body>
+</html>
