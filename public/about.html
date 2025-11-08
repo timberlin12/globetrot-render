@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About TravelWorld - Your trusted travel partner since 2009. Learn about our mission, vision, and commitment to creating unforgettable travel experiences.">
+    <title>About Us - TravelWorld | Crafting Dream Journeys Since 2009</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">TravelWorld</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="hotels.html">Hotels</a></li>
+                <li><a href="transport.html">Transport</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <img src="images/about-hero.jpg" alt="About TravelWorld - Crafting Dream Journeys" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">About TravelWorld</h1>
+            <p class="hero-subtitle">Crafting Dream Journeys Since 2009</p>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-content-section">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Left: Text Content -->
+                <div class="about-text">
+                    <h2 class="section-heading">Your Trusted Travel Partner</h2>
+                    <p class="about-description">
+                        TravelWorld is more than just a travel agency – we are your companions in exploration, 
+                        your guides to hidden gems, and your partners in creating extraordinary memories. 
+                        With over 15 years of experience in the travel industry, we have helped thousands of 
+                        travelers discover the beauty and diversity of India and beyond.
+                    </p>
+
+                    <!-- Subsection Buttons -->
+                    <div class="subsection-buttons">
+                        <button class="subsection-btn active" data-section="mission">
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                            Our Mission
+                        </button>
+                        <button class="subsection-btn" data-section="vision">
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            Our Vision
+                        </button>
+                        <button class="subsection-btn" data-section="goals">
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                            </svg>
+                            Our Future Goals
+                        </button>
+                    </div>
+
+                    <!-- Active Section Content -->
+                    <div class="active-section-content">
+                        <div class="section-header">
+                            <svg class="section-icon" id="sectionIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                            <h3 class="section-title" id="sectionTitle">Our Mission</h3>
+                        </div>
+                        <p class="section-text" id="sectionContent">
+                            At TravelWorld, our mission is to create unforgettable travel experiences that go beyond ordinary tourism. We are committed to providing exceptional service, personalized itineraries, and seamless travel arrangements that cater to every traveler's unique needs. We believe in responsible tourism that respects local cultures, supports local communities, and preserves the natural beauty of destinations for future generations. Our dedicated team works tirelessly to ensure that every journey with us is not just a trip, but a collection of cherished memories that last a lifetime.
+                        </p>
+                    </div>
+
+                    <div class="about-cta">
+                        <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
+                    </div>
+                </div>
+
+                <!-- Right: Image Collage -->
+                <div class="about-image-container">
+                    <div class="about-main-image">
+                        <img src="images/about-collage.jpg" alt="Travel destinations collage showcasing TravelWorld experiences">
+                    </div>
+                    
+                    <!-- Stats Overlay Cards -->
+                    <div class="stat-card stat-card-1">
+                        <svg class="stat-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <div class="stat-number">50,000+</div>
+                        <div class="stat-label">Happy Travelers</div>
+                    </div>
+                    
+                    <div class="stat-card stat-card-2">
+                        <svg class="stat-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg>
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+
+                    <div class="stat-card stat-card-3">
+                        <svg class="stat-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TravelWorld</h3>
+                <p>Your trusted partner in creating unforgettable travel experiences across India and beyond.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="hotels.html">Hotels</a></li>
+                    <li><a href="transport.html">Transport</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li>📧 info@travelworld.com</li>
+                    <li>📞 +91 98765 43210</li>
+                    <li>📍 Mumbai, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TravelWorld. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="about.js"></script>
+</body>
+</html>
