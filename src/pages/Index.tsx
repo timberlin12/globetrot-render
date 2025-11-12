@@ -7,7 +7,6 @@ import { SpecialOffers } from '@/components/SpecialOffers';
 import { WhyChooseUs } from '@/components/WhyChooseUs';
 import { Testimonials } from '@/components/Testimonials';
 import { MapSection } from '@/components/MapSection';
-import { ContactCTA } from '@/components/ContactCTA';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -22,7 +21,6 @@ const Index = () => {
       <WhyChooseUs />
       <Testimonials />
       <MapSection />
-      <ContactCTA />
       <Footer />
     </div>
   );

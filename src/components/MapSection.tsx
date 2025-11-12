@@ -1,4 +1,6 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 export const MapSection = () => {
   return (
@@ -14,6 +16,13 @@ export const MapSection = () => {
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Our office is conveniently located in the heart of the city
           </p>
+          <div className="mt-6">
+            <Link to="/contact">
+              <Button size="lg" className="min-w-[200px]">
+                Contact Us Now
+              </Button>
+            </Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
