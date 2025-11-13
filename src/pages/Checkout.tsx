@@ -129,9 +129,9 @@ const Checkout = () => {
 
     setProcessing(false);
     
-    // Redirect to home page after successful booking
+    // Redirect to thank you page after successful booking
     setTimeout(() => {
-      navigate("/");
+      navigate("/thankyou");
     }, 1500);
   };
 
