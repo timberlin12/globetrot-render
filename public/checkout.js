@@ -196,9 +196,9 @@ document.getElementById('checkoutForm').addEventListener('submit', async (e) => 
     // Clear booking data
     localStorage.removeItem('bookingData');
 
-    // Redirect to home page after 1.5 seconds
+    // Redirect to thank you page after 1.5 seconds
     setTimeout(() => {
-        window.location.href = 'index.html';
+        window.location.href = 'thankyou.html';
     }, 1500);
 });
 
