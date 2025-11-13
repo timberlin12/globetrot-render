@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { Navbar } from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Target, Eye, Rocket, Users, Award, Heart } from 'lucide-react';
+import TeamSection from '@/components/TeamSection';
+import CertificationsSection from '@/components/CertificationsSection';
+import PartnerLogos from '@/components/PartnerLogos';
+import AwardsSection from '@/components/AwardsSection';
 import { Button } from '@/components/ui/button';
 import aboutHero from '@/assets/about-hero.jpg';
 import aboutCollage from '@/assets/about-collage.jpg';
@@ -155,6 +159,18 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Team Section */}
+      <TeamSection />
+
+      {/* Certifications Section */}
+      <CertificationsSection />
+
+      {/* Partner Logos */}
+      <PartnerLogos />
+
+      {/* Awards Section */}
+      <AwardsSection />
 
       <Footer />
     </div>
