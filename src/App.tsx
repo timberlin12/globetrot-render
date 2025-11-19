@@ -14,6 +14,7 @@ import Transport from "./pages/Transport";
 import TransportDetail from "./pages/TransportDetail";
 import Checkout from "./pages/Checkout";
 import ThankYou from "./pages/ThankYou";
+import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/transport/:id" element={<TransportDetail />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/thankyou" element={<ThankYou />} />
+          <Route path="/blog" element={<Blog />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
