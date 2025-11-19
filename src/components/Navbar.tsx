@@ -22,6 +22,7 @@ export const Navbar = () => {
     { name: 'Tours', href: '/tours', type: 'route' },
     { name: 'Hotels', href: '/hotel', type: 'route' },
     { name: 'Transport', href: '/transport', type: 'route' },
+    { name: 'Blog', href: '/blog', type: 'route' },
     { name: 'About', href: '/about', type: 'route' },
     { name: 'Contact', href: '/contact', type: 'route' },
   ];
