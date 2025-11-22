@@ -6580,3 +6580,64 @@ h4 { font-size: 1.25rem; }
     font-size: 0.875rem;
     color: hsl(215, 16%, 47%);
 }
+
+/* Refund Table Styles */
+.refund-table {
+    background: hsl(210, 40%, 96%);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.refund-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+}
+
+.refund-row:not(:last-child) {
+    border-bottom: 1px solid hsl(214, 32%, 91%);
+}
+
+.refund-header {
+    font-weight: 600;
+    color: hsl(222, 47%, 11%);
+    border-bottom: 2px solid hsl(217, 91%, 60%) !important;
+}
+
+.refund-row .charge {
+    font-weight: 600;
+    color: hsl(222, 47%, 11%);
+}
+
+.refund-row .no-refund {
+    color: hsl(0, 84%, 60%);
+}
+
+/* Tip Box Styles */
+.tip-box {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, hsl(217, 91%, 95%), hsl(217, 91%, 98%));
+    border-left: 4px solid hsl(217, 91%, 60%);
+    border-radius: 0.5rem;
+}
+
+.tip-box p {
+    font-size: 0.875rem;
+    color: hsl(222, 47%, 11%);
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .refund-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .refund-row span:last-child {
+        align-self: flex-end;
+    }
+}
