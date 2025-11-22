@@ -146,9 +146,9 @@ export const Footer = () => {
               <Link to="/terms" className="hover:text-primary transition-smooth">
                 Terms of Service
               </Link>
-              <a href="#" className="hover:text-primary transition-smooth">
-                Cookie Policy
-              </a>
+              <Link to="/refund" className="hover:text-primary transition-smooth">
+                Refund Policy
+              </Link>
             </div>
           </div>
         </div>
