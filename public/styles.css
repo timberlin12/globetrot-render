@@ -6434,3 +6434,149 @@ h4 { font-size: 1.25rem; }
         transform: rotate(90deg);
     }
 }
+
+/* Terms & Conditions Styles */
+.terms-hero {
+    position: relative;
+    height: 40vh;
+    background: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(217, 91%, 45%) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.terms-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.terms-hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+}
+
+.terms-hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.terms-hero-content p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+    .terms-hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .terms-hero-content p {
+        font-size: 1.5rem;
+    }
+}
+
+.terms-content {
+    padding: 4rem 0;
+}
+
+.terms-container {
+    max-width: 56rem;
+    margin: 0 auto;
+}
+
+.terms-intro {
+    margin-bottom: 3rem;
+}
+
+.terms-intro p {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: hsl(215, 16%, 47%);
+}
+
+.terms-section {
+    margin-bottom: 3rem;
+}
+
+.terms-section h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: hsl(222, 47%, 11%);
+}
+
+.terms-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.terms-text p,
+.terms-text li {
+    color: hsl(215, 16%, 47%);
+    line-height: 1.75;
+}
+
+.terms-text strong {
+    color: hsl(222, 47%, 11%);
+    font-weight: 600;
+}
+
+.terms-text ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.terms-contact {
+    padding: 1.5rem;
+    background: hsl(210, 40%, 96%);
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.terms-contact h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: hsl(222, 47%, 11%);
+}
+
+.terms-contact p {
+    color: hsl(215, 16%, 47%);
+    margin-bottom: 1rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-details p {
+    color: hsl(215, 16%, 47%);
+}
+
+.contact-details strong {
+    color: hsl(222, 47%, 11%);
+    font-weight: 600;
+}
+
+.terms-footer {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid hsl(214, 32%, 91%);
+}
+
+.terms-footer p {
+    font-size: 0.875rem;
+    color: hsl(215, 16%, 47%);
+}
