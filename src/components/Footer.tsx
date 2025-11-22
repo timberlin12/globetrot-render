@@ -140,9 +140,9 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-300">
             <p>© 2025 WanderLux Travel. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-primary transition-smooth">
+              <Link to="/privacy" className="hover:text-primary transition-smooth">
                 Privacy Policy
-              </a>
+              </Link>
               <Link to="/terms" className="hover:text-primary transition-smooth">
                 Terms of Service
               </Link>
