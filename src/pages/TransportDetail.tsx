@@ -416,36 +416,14 @@ const TransportDetail = () => {
                   </div>
                 </div>
 
-                {/* Enquiry Form */}
+                {/* Enquiry Section */}
                 <div className="space-y-4">
-                  <h3 className="font-semibold text-lg">Send Enquiry</h3>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="enquiry-name">Your Name</Label>
-                    <Input id="enquiry-name" placeholder="Enter your name" />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="enquiry-email">Email</Label>
-                    <Input id="enquiry-email" type="email" placeholder="Enter your email" />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="enquiry-phone">Phone</Label>
-                    <Input id="enquiry-phone" type="tel" placeholder="Enter your phone" />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="enquiry-message">Message</Label>
-                    <Textarea 
-                      id="enquiry-message" 
-                      placeholder="Tell us about your travel plans..."
-                      rows={4}
-                    />
-                  </div>
-
-                  <Button className="w-full" variant="outline">
-                    Send Enquiry
+                  <h3 className="font-semibold text-lg">Have Questions?</h3>
+                  <p className="text-muted-foreground">
+                    Need more information or want to customize your rental? Our team is here to help you with all your transportation needs.
+                  </p>
+                  <Button variant="outline" className="w-full" size="lg">
+                    Enquire Now
                   </Button>
                 </div>
 

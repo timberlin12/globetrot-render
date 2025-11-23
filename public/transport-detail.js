@@ -311,23 +311,7 @@ document.getElementById('bookingForm').addEventListener('submit', (e) => {
   window.location.href = 'checkout.html';
 });
 
-// Enquiry form submission
-document.getElementById('enquiryForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const name = document.getElementById('enquiryName').value;
-  const email = document.getElementById('enquiryEmail').value;
-  const phone = document.getElementById('enquiryPhone').value;
-  const message = document.getElementById('enquiryMessage').value;
-
-  // Simulate sending enquiry
-  console.log('Enquiry submitted:', { name, email, phone, message });
-  
-  showToast('Enquiry sent successfully! We will contact you soon.', 'success');
-  
-  // Reset form
-  e.target.reset();
-});
+// Note: Enquiry form removed - replaced with simple Enquire Now button
 
 // Mobile menu
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
