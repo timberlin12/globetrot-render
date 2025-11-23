@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazing Kashmir Valley Tour | Tour Details</title>
+  <meta name="description" content="Experience the breathtaking beauty of Kashmir with our carefully curated 5-day tour package. Explore stunning valleys, pristine lakes, and snow-capped mountains.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="tour-detail-1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">TravelExplorer</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="tours.html" class="nav-link">Tours</a>
+        <a href="hotels.html" class="nav-link">Hotels</a>
+        <a href="transport.html" class="nav-link">Transport</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="tour-hero">
+    <img src="images/tour-detail-hero.jpg" alt="Amazing Kashmir Valley Tour" class="tour-hero-image">
+    <div class="tour-hero-overlay">
+      <div class="tour-hero-content">
+        <h1 class="tour-hero-title">Amazing Kashmir Valley Tour</h1>
+        <p class="tour-hero-location">
+          <i data-lucide="map-pin"></i>
+          <span>Kashmir, India</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Gallery -->
+  <section class="tour-gallery">
+    <div class="container">
+      <div class="gallery-grid">
+        <div class="gallery-main">
+          <img id="mainImage" src="images/tour-detail-hero.jpg" alt="Main tour image" class="gallery-image-main">
+        </div>
+        <img src="images/hero-kashmir.jpg" alt="Tour image 1" class="gallery-image-small" data-index="1">
+        <img src="images/hero-manali.jpg" alt="Tour image 2" class="gallery-image-small" data-index="2">
+        <img src="images/hero-kerala.jpg" alt="Tour image 3" class="gallery-image-small" data-index="3">
+        <button class="gallery-view-more" id="viewMoreBtn">View More Images</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="tour-content">
+    <div class="container">
+      <div class="tour-layout">
+        <!-- Left Side - Tour Details -->
+        <div class="tour-details">
+          <!-- Quick Info -->
+          <div class="tour-card">
+            <div class="quick-info-grid">
+              <div class="quick-info-item">
+                <div class="quick-info-icon">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div>
+                  <p class="quick-info-label">Location</p>
+                  <p class="quick-info-value">Kashmir, India</p>
+                </div>
+              </div>
+              <div class="quick-info-item">
+                <div class="quick-info-icon">
+                  <i data-lucide="clock"></i>
+                </div>
+                <div>
+                  <p class="quick-info-label">Duration</p>
+                  <p class="quick-info-value">5 Days / 4 Nights</p>
+                </div>
+              </div>
+              <div class="quick-info-item">
+                <div class="quick-info-icon">
+                  <i data-lucide="users"></i>
+                </div>
+                <div>
+                  <p class="quick-info-label">Max People</p>
+                  <p class="quick-info-value">15</p>
+                </div>
+              </div>
+              <div class="quick-info-item">
+                <div class="quick-info-icon">
+                  <span class="currency-symbol">₹</span>
+                </div>
+                <div>
+                  <p class="quick-info-label">Per Person</p>
+                  <p class="quick-info-value">₹15,999</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tour Planning -->
+          <div class="tour-card">
+            <h2 class="tour-card-title">Tour Planning</h2>
+            <div class="tour-planning">
+              <div class="tour-stop">Delhi</div>
+              <i data-lucide="arrow-right" class="tour-arrow"></i>
+              <div class="tour-stop">Srinagar</div>
+              <i data-lucide="arrow-right" class="tour-arrow"></i>
+              <div class="tour-stop">Gulmarg</div>
+              <i data-lucide="arrow-right" class="tour-arrow"></i>
+              <div class="tour-stop">Pahalgam</div>
+              <i data-lucide="arrow-right" class="tour-arrow"></i>
+              <div class="tour-stop">Delhi</div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="tour-card">
+            <h2 class="tour-card-title">About This Tour</h2>
+            <p class="tour-description">
+              Experience the breathtaking beauty of Kashmir with our carefully curated tour package. Explore the stunning valleys, pristine lakes, and snow-capped mountains. This tour includes visits to the most iconic destinations in Kashmir, offering you an unforgettable journey through paradise on earth.
+            </p>
+          </div>
+
+          <!-- Package Inclusions -->
+          <div class="tour-card">
+            <h2 class="tour-card-title">What's Included</h2>
+            <ul class="tour-list">
+              <li class="tour-list-item">
+                <i data-lucide="check" class="icon-check"></i>
+                <span>Accommodation in 4-star hotels</span>
+              </li>
+              <li class="tour-list-item">
+                <i data-lucide="check" class="icon-check"></i>
+                <span>Daily breakfast and dinner</span>
+              </li>
+              <li class="tour-list-item">
+                <i data-lucide="check" class="icon-check"></i>
+                <span>All transfers and sightseeing by private vehicle</span>
+              </li>
+              <li class="tour-list-item">
+                <i data-lucide="check" class="icon-check"></i>
+                <span>Professional English-speaking guide</span>
+              </li>
+              <li class="tour-list-item">
+                <i data-lucide="check" class="icon-check"></i>
+                <span>Entry fees to monuments</span>
+              </li>
+              <li class="tour-list-item">
+                <i data-lucide="check" class="icon-check"></i>
+                <span>Airport pickup and drop</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Package Exclusions -->
+          <div class="tour-card">
+            <h2 class="tour-card-title">What's Not Included</h2>
+            <ul class="tour-list">
+              <li class="tour-list-item">
+                <i data-lucide="x" class="icon-x"></i>
+                <span>International/Domestic airfare</span>
+              </li>
+              <li class="tour-list-item">
+                <i data-lucide="x" class="icon-x"></i>
+                <span>Personal expenses like tips, laundry, telephone calls</span>
+              </li>
+              <li class="tour-list-item">
+                <i data-lucide="x" class="icon-x"></i>
+                <span>Optional activities and tours</span>
+              </li>
+              <li class="tour-list-item">
+                <i data-lucide="x" class="icon-x"></i>
+                <span>Travel insurance</span>
+              </li>
+              <li class="tour-list-item">
+                <i data-lucide="x" class="icon-x"></i>
+                <span>Any meals not mentioned in inclusions</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tour Highlights -->
+          <div class="tour-card">
+            <h2 class="tour-card-title">Tour Highlights</h2>
+            <div class="highlights-grid">
+              <div class="highlight-item">
+                <i data-lucide="check" class="icon-highlight"></i>
+                <span>Shikara ride on Dal Lake</span>
+              </div>
+              <div class="highlight-item">
+                <i data-lucide="check" class="icon-highlight"></i>
+                <span>Cable car ride in Gulmarg</span>
+              </div>
+              <div class="highlight-item">
+                <i data-lucide="check" class="icon-highlight"></i>
+                <span>Visit to Betaab Valley</span>
+              </div>
+              <div class="highlight-item">
+                <i data-lucide="check" class="icon-highlight"></i>
+                <span>Mughal Gardens tour</span>
+              </div>
+              <div class="highlight-item">
+                <i data-lucide="check" class="icon-highlight"></i>
+                <span>Snow activities in Gulmarg</span>
+              </div>
+              <div class="highlight-item">
+                <i data-lucide="check" class="icon-highlight"></i>
+                <span>Traditional Kashmiri cuisine experience</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Itinerary -->
+          <div class="tour-card">
+            <h2 class="tour-card-title">Detailed Itinerary</h2>
+            <div class="itinerary-accordion">
+              <div class="itinerary-item">
+                <button class="itinerary-trigger">
+                  <div class="itinerary-header">
+                    <div class="itinerary-day-badge">1</div>
+                    <span class="itinerary-title">Arrival in Srinagar</span>
+                  </div>
+                  <i data-lucide="chevron-down" class="itinerary-chevron"></i>
+                </button>
+                <div class="itinerary-content">
+                  <p>Arrive at Srinagar airport and transfer to your hotel. After check-in and rest, enjoy a relaxing Shikara ride on Dal Lake. Visit the famous Mughal Gardens including Nishat Bagh and Shalimar Bagh. Overnight stay in Srinagar.</p>
+                </div>
+              </div>
+
+              <div class="itinerary-item">
+                <button class="itinerary-trigger">
+                  <div class="itinerary-header">
+                    <div class="itinerary-day-badge">2</div>
+                    <span class="itinerary-title">Srinagar to Gulmarg</span>
+                  </div>
+                  <i data-lucide="chevron-down" class="itinerary-chevron"></i>
+                </button>
+                <div class="itinerary-content">
+                  <p>After breakfast, drive to Gulmarg (2-3 hours). Take the Gondola cable car ride to Khilanmarg for stunning mountain views. Enjoy snow activities and explore the meadows. Return to Srinagar for overnight stay.</p>
+                </div>
+              </div>
+
+              <div class="itinerary-item">
+                <button class="itinerary-trigger">
+                  <div class="itinerary-header">
+                    <div class="itinerary-day-badge">3</div>
+                    <span class="itinerary-title">Srinagar to Pahalgam</span>
+                  </div>
+                  <i data-lucide="chevron-down" class="itinerary-chevron"></i>
+                </button>
+                <div class="itinerary-content">
+                  <p>Drive to Pahalgam (3 hours) via Saffron fields and Awantipora ruins. Visit Betaab Valley and Aru Valley. Enjoy the scenic beauty and optional horse riding. Overnight in Pahalgam.</p>
+                </div>
+              </div>
+
+              <div class="itinerary-item">
+                <button class="itinerary-trigger">
+                  <div class="itinerary-header">
+                    <div class="itinerary-day-badge">4</div>
+                    <span class="itinerary-title">Pahalgam Exploration</span>
+                  </div>
+                  <i data-lucide="chevron-down" class="itinerary-chevron"></i>
+                </button>
+                <div class="itinerary-content">
+                  <p>Full day to explore Pahalgam. Optional visit to Chandanwari and Baisaran meadows. Evening at leisure to explore local markets. Overnight in Pahalgam.</p>
+                </div>
+              </div>
+
+              <div class="itinerary-item">
+                <button class="itinerary-trigger">
+                  <div class="itinerary-header">
+                    <div class="itinerary-day-badge">5</div>
+                    <span class="itinerary-title">Departure</span>
+                  </div>
+                  <i data-lucide="chevron-down" class="itinerary-chevron"></i>
+                </button>
+                <div class="itinerary-content">
+                  <p>After breakfast, drive back to Srinagar airport for your onward journey. Tour ends with beautiful memories.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side - Reservation -->
+        <div class="tour-sidebar">
+          <!-- Reserve Your Activity -->
+          <div class="tour-card reservation-card">
+            <h2 class="tour-card-title">Reserve Your Activity</h2>
+            
+            <!-- Online Booking Form -->
+            <div class="booking-section">
+              <h3 class="booking-subtitle">Online Booking</h3>
+              
+              <div class="form-group">
+                <label for="booking-date" class="form-label">Booking Date</label>
+                <input type="date" id="booking-date" class="form-input">
+              </div>
+
+              <div class="form-group">
+                <label for="num-persons" class="form-label">Number of Persons</label>
+                <input type="number" id="num-persons" class="form-input" min="1" max="15" value="1">
+              </div>
+
+              <div class="price-summary">
+                <div class="price-row">
+                  <span class="price-label">Price per person:</span>
+                  <span class="price-value">₹15,999</span>
+                </div>
+                <div class="price-row">
+                  <span class="price-label">Number of persons:</span>
+                  <span class="price-value" id="displayPersons">1</span>
+                </div>
+                <div class="price-total">
+                  <span class="price-label-total">Total Amount:</span>
+                  <span class="price-value-total" id="totalAmount">₹15,999</span>
+                </div>
+              </div>
+
+              <button class="btn btn-primary btn-lg" id="bookNowBtn">Book Now</button>
+            </div>
+
+            <div class="divider">
+              <span class="divider-text">Or</span>
+            </div>
+
+            <!-- Enquiry Form -->
+            <div class="enquiry-section">
+              <h3 class="booking-subtitle">Send Enquiry</h3>
+              
+              <div class="form-group">
+                <label for="enquiry-name" class="form-label">Your Name</label>
+                <input type="text" id="enquiry-name" class="form-input" placeholder="Enter your name">
+              </div>
+
+              <div class="form-group">
+                <label for="enquiry-email" class="form-label">Email</label>
+                <input type="email" id="enquiry-email" class="form-input" placeholder="Enter your email">
+              </div>
+
+              <div class="form-group">
+                <label for="enquiry-phone" class="form-label">Phone</label>
+                <input type="tel" id="enquiry-phone" class="form-input" placeholder="Enter your phone">
+              </div>
+
+              <div class="form-group">
+                <label for="enquiry-message" class="form-label">Message</label>
+                <textarea id="enquiry-message" class="form-textarea" placeholder="Tell us about your requirements..." rows="4"></textarea>
+              </div>
+
+              <button class="btn btn-outline btn-lg">Send Enquiry</button>
+            </div>
+          </div>
+
+          <!-- Tour Host -->
+          <div class="tour-card">
+            <h2 class="tour-card-title">Your Tour Host</h2>
+            <div class="host-info">
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=rajesh" alt="Rajesh Kumar" class="host-avatar">
+              <div class="host-details">
+                <h4 class="host-name">Rajesh Kumar</h4>
+                <p class="host-role">Tour Guide</p>
+              </div>
+            </div>
+            <div class="host-contact">
+              <a href="tel:+919876543210" class="host-phone">
+                <i data-lucide="phone"></i>
+                <span>+91 98765 43210</span>
+              </a>
+              <a href="tel:+919876543210" class="btn btn-outline btn-full">
+                <i data-lucide="phone"></i>
+                <span>Contact Host</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-title">TravelExplorer</h3>
+          <p class="footer-description">Your trusted partner for unforgettable travel experiences across India.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="hotels.html">Hotels</a></li>
+            <li><a href="transport.html">Transport</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund.html">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 TravelExplorer. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="tour-detail-1.js"></script>
+</body>
+</html>
