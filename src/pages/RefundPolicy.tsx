@@ -1,7 +1,7 @@
 import { Navbar } from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet';
-import heroImage from '@/assets/tours-hero.jpg';
+import heroImage from '@/assets/hero-manali.jpg';
 
 const RefundPolicy = () => {
   return (
