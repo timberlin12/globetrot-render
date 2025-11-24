@@ -4620,60 +4620,125 @@ h4 { font-size: 1.25rem; }
 
 .contact-content-section {
     padding: 5rem 0;
-    background-color: hsl(var(--background));
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted) / 0.3) 50%, hsl(var(--background)) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-content-section::before,
+.contact-content-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.2;
+}
+
+.contact-content-section::before {
+    top: 5rem;
+    left: 2.5rem;
+    width: 18rem;
+    height: 18rem;
+    background: hsl(var(--primary) / 0.2);
+}
+
+.contact-content-section::after {
+    bottom: 5rem;
+    right: 2.5rem;
+    width: 24rem;
+    height: 24rem;
+    background: hsl(var(--accent) / 0.2);
 }
 
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 3rem;
+    position: relative;
+    z-index: 10;
 }
 
 .contact-info-container {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
 }
 
 .contact-intro {
     font-size: 1.125rem;
     color: hsl(var(--muted-foreground));
-    margin-bottom: 2rem;
+    line-height: 1.7;
 }
 
 .contact-info-cards {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .contact-info-card {
-    background-color: hsl(var(--accent) / 0.3);
+    position: relative;
+    background: hsl(var(--card));
     padding: 1.5rem;
     border-radius: 0.75rem;
-    border: 2px solid hsl(var(--accent));
+    border: 2px solid hsl(var(--border) / 0.5);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.contact-info-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.05), hsl(var(--accent) / 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .contact-info-card:hover {
-    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: var(--shadow-large);
+    transform: translateY(-4px);
+}
+
+.contact-info-card:hover::before {
+    opacity: 1;
 }
 
 .info-card-content {
     display: flex;
     align-items: start;
     gap: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .info-icon-wrapper {
-    background-color: hsl(var(--primary) / 0.1);
-    padding: 0.75rem;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    padding: 0.875rem;
     border-radius: 0.5rem;
+    box-shadow: var(--shadow-medium);
+    transition: box-shadow 0.3s ease;
+}
+
+.contact-info-card:hover .info-icon-wrapper {
+    box-shadow: var(--shadow-large);
 }
 
 .info-icon {
     width: 1.5rem;
     height: 1.5rem;
-    color: hsl(var(--primary));
+    color: white;
     stroke: currentColor;
     fill: none;
     stroke-width: 2;
@@ -4684,25 +4749,48 @@ h4 { font-size: 1.25rem; }
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: hsl(var(--foreground));
+    transition: color 0.3s ease;
+}
+
+.contact-info-card:hover .info-title {
+    color: hsl(var(--primary));
 }
 
 .info-detail {
     color: hsl(var(--muted-foreground));
     margin: 0.25rem 0;
+    transition: color 0.3s ease;
+}
+
+.contact-info-card:hover .info-detail {
+    color: hsl(var(--foreground));
+}
+
+.contact-form-container {
+    position: relative;
 }
 
 .contact-form-wrapper {
-    background-color: hsl(var(--accent) / 0.3);
-    padding: 2rem;
-    border-radius: 0.75rem;
-    border: 2px solid hsl(var(--accent));
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.5) 100%);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    border: 2px solid hsl(var(--border) / 0.5);
+    box-shadow: var(--shadow-large);
+    position: sticky;
+    top: 6rem;
 }
 
 .form-heading {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     color: hsl(var(--foreground));
+}
+
+.form-subheading {
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 1.5rem;
 }
 
 .contact-form {
@@ -4717,7 +4805,8 @@ h4 { font-size: 1.25rem; }
 }
 
 .form-label {
-    font-weight: 500;
+    font-weight: 600;
+    color: hsl(var(--foreground));
     margin-bottom: 0.5rem;
     color: hsl(var(--foreground));
 }
@@ -4725,13 +4814,20 @@ h4 { font-size: 1.25rem; }
 .form-input,
 .form-textarea {
     width: 100%;
-    padding: 0.75rem 1rem;
-    border: 2px solid hsl(var(--border));
+    padding: 0.875rem 1rem;
+    border: 2px solid hsl(var(--border) / 0.5);
     border-radius: 0.5rem;
     font-size: 1rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+    height: 3rem;
+}
+
+.form-textarea {
+    min-height: 150px;
+    resize: none;
+    height: auto;
 }
 
 .form-input:focus,
@@ -4739,11 +4835,6 @@ h4 { font-size: 1.25rem; }
     outline: none;
     border-color: hsl(var(--primary));
     box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
-}
-
-.form-textarea {
-    min-height: 150px;
-    resize: vertical;
 }
 
 .form-input.input-error,
@@ -4760,6 +4851,42 @@ h4 { font-size: 1.25rem; }
 
 .btn-block {
     width: 100%;
+}
+
+/* Responsive Styles for Contact Section */
+@media (min-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+    
+    .section-heading {
+        font-size: 3rem;
+    }
+    
+    .form-heading {
+        font-size: 2.25rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-grid {
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-heading {
+        font-size: 2rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
 }
 
 .map-section {
