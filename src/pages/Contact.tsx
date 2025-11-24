@@ -78,40 +78,53 @@ const Contact = () => {
       </section>
 
       {/* Contact Info & Form Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12">
+      <section className="py-20 bg-gradient-to-br from-background via-muted/30 to-background relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
             {/* Left: Contact Information */}
-            <div>
-              <h2 className="text-4xl font-bold mb-6 text-foreground">
-                Contact Information
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Reach out to us for any queries, bookings, or travel assistance. 
-                Our team is always ready to help you plan your dream vacation.
-              </p>
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-4xl md:text-5xl font-bold text-foreground bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  Contact Information
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Reach out to us for any queries, bookings, or travel assistance. 
+                  Our team is always ready to help you plan your dream vacation.
+                </p>
+              </div>
 
-              <div className="space-y-6">
+              <div className="space-y-5">
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
                     <div
                       key={index}
-                      className="bg-accent/30 p-6 rounded-lg border border-accent hover:shadow-medium transition-smooth"
+                      className="group relative bg-card border-2 border-border/50 rounded-xl p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-large hover:-translate-y-1 overflow-hidden"
                     >
-                      <div className="flex items-start gap-4">
-                        <div className="bg-primary/10 p-3 rounded-lg">
-                          <Icon className="w-6 h-6 text-primary" />
+                      {/* Gradient overlay on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      <div className="flex items-start gap-4 relative z-10">
+                        <div className="bg-gradient-to-br from-primary to-primary-dark p-3.5 rounded-lg shadow-medium group-hover:shadow-large transition-shadow duration-300">
+                          <Icon className="w-6 h-6 text-white" />
                         </div>
-                        <div>
-                          <h3 className="text-xl font-bold mb-2 text-foreground">
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300">
                             {info.title}
                           </h3>
-                          {info.details.map((detail, idx) => (
-                            <p key={idx} className="text-muted-foreground">
-                              {detail}
-                            </p>
-                          ))}
+                          <div className="space-y-1">
+                            {info.details.map((detail, idx) => (
+                              <p key={idx} className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                                {detail}
+                              </p>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -122,82 +135,88 @@ const Contact = () => {
 
             {/* Right: Contact Form */}
             <div>
-              <div className="bg-accent/30 p-8 rounded-lg border border-accent">
-                <h2 className="text-3xl font-bold mb-6 text-foreground">
-                  Send Us a Message
-                </h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="bg-gradient-to-br from-card to-card/50 backdrop-blur-sm p-8 lg:p-10 rounded-2xl border-2 border-border/50 shadow-large sticky top-24">
+                <div className="space-y-6">
                   <div>
-                    <Label htmlFor="name">Full Name *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      placeholder="Enter your full name"
-                      className="mt-2"
-                    />
+                    <h2 className="text-3xl md:text-4xl font-bold mb-2 text-foreground">
+                      Send Us a Message
+                    </h2>
+                    <p className="text-muted-foreground">We'll respond within 24 hours</p>
                   </div>
+                  
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div>
+                      <Label htmlFor="name" className="text-foreground font-medium">Full Name *</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        placeholder="Enter your full name"
+                        className="mt-2 h-12 border-border/50 focus:border-primary transition-colors"
+                      />
+                    </div>
 
-                  <div>
-                    <Label htmlFor="email">Email Address *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="your.email@example.com"
-                      className="mt-2"
-                    />
-                  </div>
+                    <div>
+                      <Label htmlFor="email" className="text-foreground font-medium">Email Address *</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        placeholder="your.email@example.com"
+                        className="mt-2 h-12 border-border/50 focus:border-primary transition-colors"
+                      />
+                    </div>
 
-                  <div>
-                    <Label htmlFor="phone">Phone Number *</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      placeholder="+91 98765 43210"
-                      className="mt-2"
-                    />
-                  </div>
+                    <div>
+                      <Label htmlFor="phone" className="text-foreground font-medium">Phone Number *</Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        placeholder="+91 98765 43210"
+                        className="mt-2 h-12 border-border/50 focus:border-primary transition-colors"
+                      />
+                    </div>
 
-                  <div>
-                    <Label htmlFor="subject">Subject *</Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      placeholder="How can we help you?"
-                      className="mt-2"
-                    />
-                  </div>
+                    <div>
+                      <Label htmlFor="subject" className="text-foreground font-medium">Subject *</Label>
+                      <Input
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                        placeholder="How can we help you?"
+                        className="mt-2 h-12 border-border/50 focus:border-primary transition-colors"
+                      />
+                    </div>
 
-                  <div>
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      placeholder="Tell us about your travel plans..."
-                      className="mt-2 min-h-[150px]"
-                    />
-                  </div>
+                    <div>
+                      <Label htmlFor="message" className="text-foreground font-medium">Message *</Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        placeholder="Tell us about your travel plans..."
+                        className="mt-2 min-h-[150px] border-border/50 focus:border-primary transition-colors resize-none"
+                      />
+                    </div>
 
-                  <Button type="submit" size="lg" className="w-full">
-                    Send Message
-                  </Button>
-                </form>
+                    <Button type="submit" size="lg" className="w-full h-12 text-base font-semibold bg-gradient-to-r from-primary to-primary-dark hover:shadow-large transition-all duration-300">
+                      Send Message
+                    </Button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
