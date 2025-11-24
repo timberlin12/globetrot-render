@@ -6575,6 +6575,30 @@ h4 { font-size: 1.25rem; }
     overflow: hidden;
 }
 
+.refund-hero {
+    position: relative;
+    height: 50vh;
+    background-image: url('images/hero-manali.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.privacy-hero {
+    position: relative;
+    height: 50vh;
+    background-image: url('images/hero-kerala.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
 .terms-hero-overlay {
     position: absolute;
     inset: 0;
@@ -6603,7 +6627,9 @@ h4 { font-size: 1.25rem; }
 }
 
 @media (min-width: 768px) {
-    .terms-hero {
+    .terms-hero,
+    .refund-hero,
+    .privacy-hero {
         height: 60vh;
     }
 
