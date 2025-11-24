@@ -1,6 +1,7 @@
 import { Navbar } from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet';
+import heroImage from '@/assets/tours-hero.jpg';
 
 const PrivacyPolicy = () => {
   return (
@@ -13,11 +14,11 @@ const PrivacyPolicy = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[40vh] flex items-center justify-center bg-gradient-to-r from-primary/90 to-primary">
-        <div className="absolute inset-0 bg-black/20" />
+      <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }}>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60" />
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-lg md:text-xl opacity-90">Your privacy is important to us</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Privacy Policy</h1>
+          <p className="text-lg md:text-xl opacity-95 drop-shadow-md">Your privacy is important to us</p>
         </div>
       </section>
 
