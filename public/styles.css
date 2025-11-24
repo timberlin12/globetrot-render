@@ -6566,7 +6566,7 @@ h4 { font-size: 1.25rem; }
 .terms-hero {
     position: relative;
     height: 50vh;
-    background-image: url('images/tours-hero.jpg');
+    background-image: url('images/terms-hero.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -6578,7 +6578,7 @@ h4 { font-size: 1.25rem; }
 .refund-hero {
     position: relative;
     height: 50vh;
-    background-image: url('images/hero-manali.jpg');
+    background-image: url('images/refund-hero.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -6590,7 +6590,7 @@ h4 { font-size: 1.25rem; }
 .privacy-hero {
     position: relative;
     height: 50vh;
-    background-image: url('images/hero-kerala.jpg');
+    background-image: url('images/privacy-hero.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
