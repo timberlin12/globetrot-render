@@ -10,6 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "@/hooks/use-toast";
 import { CreditCard, Lock, CheckCircle2, Calendar, Users, MapPin, Hotel, Car } from "lucide-react";
+import heroImage from '@/assets/checkout-hero.jpg';
 
 interface BookingData {
   type: "tour" | "hotel" | "transport";
@@ -144,11 +145,15 @@ const Checkout = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="relative py-16 bg-gradient-to-br from-primary/10 to-secondary/10">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">Complete Your Booking</h1>
-            <p className="text-lg text-muted-foreground">
+      <section 
+        className="relative h-[50vh] md:h-[60vh] bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center text-white">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Complete Your Booking</h1>
+            <p className="text-lg md:text-xl drop-shadow-lg">
               Just a few more steps to confirm your reservation
             </p>
           </div>
