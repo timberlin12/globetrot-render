@@ -1,139 +1,218 @@
 // Blog Page Functionality
 
+// All articles data
+const allArticles = [
+    // Travel Tips
+    { id: 1, title: "10 Essential Packing Tips for Indian Travel", excerpt: "Master the art of packing light while staying prepared for India's diverse climates.", image: "images/hero-manali.jpg", date: "Dec 5, 2024", readTime: "6 min", category: "travel-tips" },
+    { id: 2, title: "Budget Travel Secrets: Explore India Under ₹1000/Day", excerpt: "Discover insider tips to experience incredible India without breaking the bank.", image: "images/hero-rajasthan.jpg", date: "Dec 3, 2024", readTime: "8 min", category: "travel-tips" },
+    { id: 3, title: "Solo Travel Safety Guide for Women in India", excerpt: "Comprehensive safety tips and must-know advice for women traveling alone.", image: "images/hero-kerala.jpg", date: "Dec 1, 2024", readTime: "10 min", category: "travel-tips" },
+    
+    // Destination Guides
+    { id: 4, title: "Complete Kashmir Travel Guide 2024", excerpt: "Everything you need to know about visiting paradise on Earth.", image: "images/hero-kashmir.jpg", date: "Nov 28, 2024", readTime: "15 min", category: "destination-guides", featured: true },
+    { id: 5, title: "Kerala Backwaters: A Complete Guide", excerpt: "Navigate the serene backwaters with our comprehensive guide.", image: "images/hero-kerala.jpg", date: "Nov 25, 2024", readTime: "12 min", category: "destination-guides" },
+    { id: 6, title: "Rajasthan Heritage Tour: Palace to Palace", excerpt: "Explore the royal heritage of Rajasthan from Jaipur to Udaipur.", image: "images/hero-rajasthan.jpg", date: "Nov 22, 2024", readTime: "14 min", category: "destination-guides" },
+    { id: 7, title: "Goa Beyond Beaches: Hidden Experiences", excerpt: "Discover the Portuguese heritage, spice plantations, and waterfalls.", image: "images/hero-goa.jpg", date: "Nov 20, 2024", readTime: "10 min", category: "destination-guides" },
+    
+    // Seasonal Travel
+    { id: 8, title: "Winter Wonderland: Best December Destinations", excerpt: "From snow-capped mountains to warm beaches, find your perfect winter escape.", image: "images/hero-manali.jpg", date: "Dec 1, 2024", readTime: "8 min", category: "seasonal-travel", season: "Winter" },
+    { id: 9, title: "Monsoon Magic: Rainy Season Travel Guide", excerpt: "Experience India's dramatic monsoon season with waterfall treks.", image: "images/hero-kerala.jpg", date: "Jun 15, 2024", readTime: "9 min", category: "seasonal-travel", season: "Monsoon" },
+    { id: 10, title: "Summer Escapes: Beat the Heat Destinations", excerpt: "Cool hill stations and coastal retreats to escape summer heat.", image: "images/hero-kashmir.jpg", date: "Apr 10, 2024", readTime: "7 min", category: "seasonal-travel", season: "Summer" },
+    { id: 11, title: "Spring Blooms: Flower Festival Destinations", excerpt: "Witness nature's colorful display from Valley of Flowers to Shillong.", image: "images/about-hero.jpg", date: "Mar 1, 2024", readTime: "6 min", category: "seasonal-travel", season: "Spring" },
+    
+    // Best Time to Visit
+    { id: 12, title: "Best Time to Visit Goa: Month-by-Month Guide", excerpt: "Plan your Goa trip perfectly with insights on weather and events.", image: "images/hero-goa.jpg", date: "Nov 15, 2024", readTime: "10 min", category: "best-time" },
+    { id: 13, title: "When to Visit Kashmir: Seasonal Comparison", excerpt: "Compare spring tulips, summer meadows, autumn colors, and winter snow.", image: "images/hero-kashmir.jpg", date: "Nov 10, 2024", readTime: "12 min", category: "best-time" },
+    { id: 14, title: "Ladakh Travel Calendar: Best Months Revealed", excerpt: "Navigate Ladakh's extreme climate with our detailed planning guide.", image: "images/hero-manali.jpg", date: "Nov 5, 2024", readTime: "11 min", category: "best-time" },
+    
+    // News & Updates
+    { id: 15, title: "New Direct Flights to Leh Announced for 2025", excerpt: "Major airlines expand connectivity to Ladakh with new routes.", image: "images/hero-kashmir.jpg", date: "Dec 6, 2024", readTime: "3 min", category: "news", isNew: true },
+    { id: 16, title: "Goa Tourism Launches Eco-Friendly Initiative", excerpt: "New sustainability program aims to make Goa a model destination.", image: "images/hero-goa.jpg", date: "Dec 4, 2024", readTime: "4 min", category: "news", isNew: true },
+    { id: 17, title: "Kerala Wins Best Wellness Destination Award", excerpt: "God's Own Country recognized globally for Ayurvedic tourism.", image: "images/hero-kerala.jpg", date: "Dec 2, 2024", readTime: "3 min", category: "news" },
+    { id: 18, title: "Rajasthan Palace Hotels Introduce Heritage Walks", excerpt: "Experience royal history with new guided heritage experiences.", image: "images/hero-rajasthan.jpg", date: "Nov 30, 2024", readTime: "5 min", category: "news" }
+];
+
+const categoryNames = {
+    'all': 'All Articles',
+    'travel-tips': 'Travel Tips',
+    'destination-guides': 'Destination Guides',
+    'seasonal-travel': 'Seasonal Travel',
+    'best-time': 'Best Time to Visit',
+    'news': 'News & Updates'
+};
+
 let currentCategory = 'all';
 let currentSearchQuery = '';
 
-// Category Filter Buttons
-const categoryButtons = document.querySelectorAll('.category-btn');
-const blogPosts = document.querySelectorAll('.blog-post-card');
-const featuredPost = document.getElementById('featuredPost');
+// DOM Elements
+const categoryButtons = document.querySelectorAll('.category-btn-new');
+const allCategoriesView = document.getElementById('allCategoriesView');
+const filteredView = document.getElementById('filteredView');
+const filteredArticlesGrid = document.getElementById('filteredArticlesGrid');
+const filteredTitle = document.getElementById('filteredTitle');
+const articlesCount = document.getElementById('articlesCount');
 const noResults = document.getElementById('noResults');
+const searchInput = document.getElementById('blogSearch');
+const viewAllButtons = document.querySelectorAll('.view-all-btn');
+const sidebarCatButtons = document.querySelectorAll('.sidebar-cat-btn');
+const clearFiltersBtn = document.getElementById('clearFiltersBtn');
 
+// Category button click handler
 categoryButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Update active state
         categoryButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
-        
-        // Get selected category
         currentCategory = button.dataset.category;
-        
-        // Filter posts
-        filterPosts();
+        filterArticles();
     });
 });
 
-// Sidebar Category Buttons
-const sidebarCategoryButtons = document.querySelectorAll('.sidebar-category-btn');
-sidebarCategoryButtons.forEach(button => {
+// View All button click handler
+viewAllButtons.forEach(button => {
     button.addEventListener('click', () => {
         const category = button.dataset.category;
-        
-        // Find and click the corresponding main category button
-        const mainCategoryButton = document.querySelector(`.category-btn[data-category="${category}"]`);
-        if (mainCategoryButton) {
-            mainCategoryButton.click();
-            
-            // Scroll to top of blog posts
-            document.querySelector('.blog-main').scrollIntoView({ behavior: 'smooth' });
+        const correspondingBtn = document.querySelector(`.category-btn-new[data-category="${category}"]`);
+        if (correspondingBtn) {
+            correspondingBtn.click();
         }
     });
 });
 
-// Search Functionality
-const searchInput = document.getElementById('blogSearch');
+// Sidebar category button click handler
+sidebarCatButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const category = button.dataset.category;
+        const correspondingBtn = document.querySelector(`.category-btn-new[data-category="${category}"]`);
+        if (correspondingBtn) {
+            correspondingBtn.click();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    });
+});
+
+// Search functionality
 searchInput.addEventListener('input', (e) => {
     currentSearchQuery = e.target.value.toLowerCase();
-    filterPosts();
+    filterArticles();
 });
 
-// Filter Posts Function
-function filterPosts() {
-    let visibleCount = 0;
-    
-    // Handle featured post visibility
+// Clear filters button
+if (clearFiltersBtn) {
+    clearFiltersBtn.addEventListener('click', () => {
+        currentCategory = 'all';
+        currentSearchQuery = '';
+        searchInput.value = '';
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        document.querySelector('.category-btn-new[data-category="all"]').classList.add('active');
+        filterArticles();
+    });
+}
+
+// Filter articles function
+function filterArticles() {
     if (currentCategory === 'all' && currentSearchQuery === '') {
-        featuredPost.style.display = 'block';
-    } else {
-        featuredPost.style.display = 'none';
+        allCategoriesView.classList.remove('hidden');
+        filteredView.classList.add('hidden');
+        return;
     }
-    
-    // Filter blog posts
-    blogPosts.forEach(post => {
-        const postCategory = post.dataset.category;
-        const postTitle = post.querySelector('h3').textContent.toLowerCase();
-        const postExcerpt = post.querySelector('p').textContent.toLowerCase();
-        
-        const matchesCategory = currentCategory === 'all' || postCategory === currentCategory;
+
+    allCategoriesView.classList.add('hidden');
+    filteredView.classList.remove('hidden');
+
+    const filtered = allArticles.filter(article => {
+        const matchesCategory = currentCategory === 'all' || article.category === currentCategory;
         const matchesSearch = currentSearchQuery === '' || 
-                            postTitle.includes(currentSearchQuery) || 
-                            postExcerpt.includes(currentSearchQuery);
+                            article.title.toLowerCase().includes(currentSearchQuery) || 
+                            article.excerpt.toLowerCase().includes(currentSearchQuery);
+        return matchesCategory && matchesSearch;
+    });
+
+    // Update title and count
+    filteredTitle.textContent = currentSearchQuery ? `Search Results for "${currentSearchQuery}"` : categoryNames[currentCategory];
+    articlesCount.textContent = `${filtered.length} Articles`;
+
+    // Render articles
+    if (filtered.length > 0) {
+        noResults.classList.add('hidden');
+        filteredArticlesGrid.innerHTML = filtered.map(article => createArticleCard(article)).join('');
         
-        if (matchesCategory && matchesSearch) {
-            post.style.display = 'block';
-            visibleCount++;
-        } else {
-            post.style.display = 'none';
+        // Add hover effects
+        addCardHoverEffects();
+    } else {
+        noResults.classList.remove('hidden');
+        filteredArticlesGrid.innerHTML = '';
+    }
+}
+
+// Create article card HTML
+function createArticleCard(article) {
+    return `
+        <article class="article-card">
+            <div class="article-card-image">
+                <img src="${article.image}" alt="${article.title}">
+                ${article.isNew ? '<span class="new-badge">New</span>' : ''}
+            </div>
+            <div class="article-card-content">
+                <span class="article-category">${categoryNames[article.category]}</span>
+                <h3>${article.title}</h3>
+                <p>${article.excerpt}</p>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar"></i> ${article.date}</span>
+                    <span><i class="far fa-clock"></i> ${article.readTime}</span>
+                </div>
+            </div>
+        </article>
+    `;
+}
+
+// Add hover effects to cards
+function addCardHoverEffects() {
+    const cards = document.querySelectorAll('.article-card, .article-card-compact, .seasonal-card, .news-card');
+    cards.forEach(card => {
+        const img = card.querySelector('img');
+        if (img) {
+            card.addEventListener('mouseenter', () => {
+                img.style.transform = 'scale(1.1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                img.style.transform = 'scale(1)';
+            });
         }
     });
-    
-    // Show/hide no results message
-    if (visibleCount === 0) {
-        noResults.classList.remove('hidden');
-    } else {
-        noResults.classList.add('hidden');
-    }
 }
 
-// Newsletter Form Submission
-const newsletterForm = document.getElementById('newsletterForm');
-newsletterForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const emailInput = newsletterForm.querySelector('input[type="email"]');
-    
-    if (emailInput.value) {
-        alert('Thank you for subscribing to our newsletter! 🎉');
-        emailInput.value = '';
+// Newsletter form submissions
+const newsletterForms = document.querySelectorAll('#sidebarNewsletterForm, #ctaNewsletterForm');
+newsletterForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const emailInput = form.querySelector('input[type="email"]');
+        if (emailInput.value) {
+            alert('Thank you for subscribing to our newsletter! 🎉');
+            emailInput.value = '';
+        }
+    });
+});
+
+// Initialize hover effects on page load
+document.addEventListener('DOMContentLoaded', () => {
+    addCardHoverEffects();
+});
+
+// Card click handlers
+document.addEventListener('click', (e) => {
+    const card = e.target.closest('.article-card, .article-card-compact, .seasonal-card, .news-card, .featured-article, .popular-post-item');
+    if (card && !e.target.closest('button') && !e.target.closest('a')) {
+        alert('Full article coming soon!');
     }
 });
 
-// Smooth scroll for read more links
-const readMoreLinks = document.querySelectorAll('.read-more-link');
-readMoreLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+// Smooth scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        // In a real application, this would navigate to the full article
-        alert('Full article coming soon!');
-    });
-});
-
-// Featured post read article button
-const featuredReadBtn = document.querySelector('.featured-post .btn');
-if (featuredReadBtn) {
-    featuredReadBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        alert('Full article coming soon!');
-    });
-}
-
-// Popular posts click handlers
-const popularPostItems = document.querySelectorAll('.popular-post-item');
-popularPostItems.forEach(item => {
-    item.addEventListener('click', () => {
-        alert('Article coming soon!');
-    });
-    item.style.cursor = 'pointer';
-});
-
-// Add hover effects to blog post cards
-blogPosts.forEach(post => {
-    const postImage = post.querySelector('.blog-post-image img');
-    
-    post.addEventListener('mouseenter', () => {
-        postImage.style.transform = 'scale(1.1)';
-    });
-    
-    post.addEventListener('mouseleave', () => {
-        postImage.style.transform = 'scale(1)';
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });

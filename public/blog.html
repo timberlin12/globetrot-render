@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Blog & Guides | TravelWorld - Expert Travel Tips & Destination Guides</title>
-    <meta name="description" content="Explore our comprehensive travel guides, tips, and stories. Discover hidden gems, cultural insights, and expert advice for your next adventure in India and beyond.">
-    <meta name="keywords" content="travel blog, travel guides, destination guides, travel tips, India travel, adventure stories, cultural experiences">
+    <title>Travel Blog & Guides | TravelWorld - Expert Tips & Destination Insights</title>
+    <meta name="description" content="Explore comprehensive travel guides, expert tips, seasonal recommendations, and the best time to visit destinations across India. Plan your perfect trip with TravelWorld.">
+    <meta name="keywords" content="travel blog, destination guides, travel tips, best time to visit India, seasonal travel, Goa travel guide, Kashmir travel guide, Kerala backwaters">
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Travel Blog & Guides | TravelWorld">
-    <meta property="og:description" content="Explore comprehensive travel guides, tips, and stories for your next adventure.">
+    <meta property="og:description" content="Expert travel tips, destination guides, and seasonal recommendations for India.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/images/hero-kashmir.jpg">
+    <link rel="canonical" href="https://travelworld.com/blog">
     
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -56,11 +57,14 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="blog-hero">
+    <section class="blog-hero-new">
         <div class="blog-hero-overlay"></div>
         <div class="blog-hero-content">
-            <h1>Travel Blog & Guides</h1>
-            <p>Discover inspiring stories, expert tips, and comprehensive guides for your next adventure</p>
+            <span class="blog-hero-badge">
+                <i class="fas fa-newspaper"></i> Travel Blog & Guides
+            </span>
+            <h1>Explore. Discover. Travel.</h1>
+            <p>Expert travel tips, destination guides, and insider recommendations for your next adventure</p>
             
             <!-- Search Bar -->
             <div class="blog-search-container">
@@ -72,222 +76,471 @@
                     placeholder="Search articles, destinations, tips..."
                 >
             </div>
+
+            <!-- Quick Stats -->
+            <div class="blog-hero-stats">
+                <div class="blog-stat">
+                    <i class="fas fa-book-open"></i>
+                    <span>18+ Articles</span>
+                </div>
+                <div class="blog-stat">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>50+ Destinations</span>
+                </div>
+                <div class="blog-stat">
+                    <i class="fas fa-compass"></i>
+                    <span>Expert Guides</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Category Filter -->
-    <section class="blog-categories">
+    <section class="blog-categories-new">
         <div class="container">
-            <div class="category-filters">
-                <button class="category-btn active" data-category="all">All</button>
-                <button class="category-btn" data-category="destinations">Destinations</button>
-                <button class="category-btn" data-category="travel-tips">Travel Tips</button>
-                <button class="category-btn" data-category="culture">Culture</button>
-                <button class="category-btn" data-category="adventure">Adventure</button>
-                <button class="category-btn" data-category="food">Food & Cuisine</button>
+            <div class="category-filters-new">
+                <button class="category-btn-new active" data-category="all">
+                    <i class="fas fa-book-open"></i>
+                    <span>All</span>
+                </button>
+                <button class="category-btn-new" data-category="travel-tips">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Travel Tips</span>
+                </button>
+                <button class="category-btn-new" data-category="destination-guides">
+                    <i class="fas fa-compass"></i>
+                    <span>Destination Guides</span>
+                </button>
+                <button class="category-btn-new" data-category="seasonal-travel">
+                    <i class="fas fa-sun"></i>
+                    <span>Seasonal Travel</span>
+                </button>
+                <button class="category-btn-new" data-category="best-time">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Best Time to Visit</span>
+                </button>
+                <button class="category-btn-new" data-category="news">
+                    <i class="fas fa-newspaper"></i>
+                    <span>News & Updates</span>
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Main Content -->
-    <section class="blog-content">
+    <section class="blog-content-new">
         <div class="container">
-            <div class="blog-grid">
-                <!-- Main Content Area -->
-                <div class="blog-main">
-                    <!-- Featured Post -->
-                    <article class="featured-post" id="featuredPost">
-                        <div class="featured-post-grid">
-                            <div class="featured-post-image">
-                                <img src="images/hero-kashmir.jpg" alt="Kashmir Hidden Gems">
-                                <span class="featured-badge">Featured</span>
+            <!-- All Categories View -->
+            <div id="allCategoriesView">
+                <!-- Featured Article -->
+                <div class="blog-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-fire"></i> Featured Guide</h2>
+                    </div>
+                    <article class="featured-article">
+                        <div class="featured-article-image">
+                            <img src="images/hero-kashmir.jpg" alt="Kashmir Travel Guide">
+                            <span class="featured-badge">Featured</span>
+                        </div>
+                        <div class="featured-article-content">
+                            <span class="article-category">Destination Guides</span>
+                            <h3>Complete Kashmir Travel Guide 2024</h3>
+                            <p>Everything you need to know about visiting paradise on Earth - from Srinagar to Gulmarg, houseboats to meadows.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-calendar"></i> November 28, 2024</span>
+                                <span><i class="far fa-clock"></i> 15 min read</span>
                             </div>
-                            <div class="featured-post-content">
-                                <span class="post-category">Destinations</span>
-                                <h2>10 Hidden Gems in Kashmir You Must Visit</h2>
-                                <p>Discover the lesser-known paradises in Kashmir that offer breathtaking views and serene experiences away from tourist crowds.</p>
-                                <div class="post-meta">
-                                    <span><i class="far fa-calendar"></i> Jan 15, 2024</span>
-                                    <span><i class="far fa-clock"></i> 8 min read</span>
-                                </div>
-                                <a href="#" class="btn btn-primary">Read Article <i class="fas fa-arrow-right"></i></a>
-                            </div>
+                            <a href="#" class="btn btn-primary">Read Full Guide <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </article>
+                </div>
 
-                    <!-- Blog Posts Grid -->
-                    <div class="blog-posts-grid" id="blogPostsGrid">
-                        <!-- Post 1 -->
-                        <article class="blog-post-card" data-category="travel-tips">
-                            <div class="blog-post-image">
-                                <img src="images/hero-kerala.jpg" alt="Kerala Backwaters">
-                            </div>
-                            <div class="blog-post-content">
-                                <span class="post-category">Travel Tips</span>
-                                <h3>Ultimate Guide to Kerala Backwaters</h3>
-                                <p>Experience the tranquil beauty of Kerala's backwaters with our comprehensive guide to houseboat tours and local attractions.</p>
-                                <div class="post-meta">
-                                    <span><i class="far fa-calendar"></i> Jan 12, 2024</span>
-                                    <span><i class="far fa-clock"></i> 6 min read</span>
-                                </div>
-                                <a href="#" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </article>
-
-                        <!-- Post 2 -->
-                        <article class="blog-post-card" data-category="travel-tips">
-                            <div class="blog-post-image">
-                                <img src="images/hero-goa.jpg" alt="Goa Beaches">
-                            </div>
-                            <div class="blog-post-content">
-                                <span class="post-category">Travel Tips</span>
-                                <h3>Best Time to Visit Goa: A Seasonal Guide</h3>
-                                <p>Plan your perfect Goa vacation with insights on weather, festivals, and crowd patterns throughout the year.</p>
-                                <div class="post-meta">
-                                    <span><i class="far fa-calendar"></i> Jan 10, 2024</span>
-                                    <span><i class="far fa-clock"></i> 5 min read</span>
-                                </div>
-                                <a href="#" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </article>
-
-                        <!-- Post 3 -->
-                        <article class="blog-post-card" data-category="adventure">
-                            <div class="blog-post-image">
-                                <img src="images/hero-manali.jpg" alt="Manali Adventure">
-                            </div>
-                            <div class="blog-post-content">
-                                <span class="post-category">Adventure</span>
-                                <h3>Adventure Sports in Manali: Thrill Seeker's Paradise</h3>
-                                <p>From paragliding to river rafting, explore the adrenaline-pumping activities that make Manali an adventure hub.</p>
-                                <div class="post-meta">
-                                    <span><i class="far fa-calendar"></i> Jan 8, 2024</span>
-                                    <span><i class="far fa-clock"></i> 7 min read</span>
-                                </div>
-                                <a href="#" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </article>
-
-                        <!-- Post 4 -->
-                        <article class="blog-post-card" data-category="food">
-                            <div class="blog-post-image">
-                                <img src="images/hero-rajasthan.jpg" alt="Rajasthan Cuisine">
-                            </div>
-                            <div class="blog-post-content">
-                                <span class="post-category">Food & Cuisine</span>
-                                <h3>Rajasthan's Royal Cuisine: A Food Lover's Journey</h3>
-                                <p>Embark on a culinary adventure through Rajasthan's palaces and streets, discovering authentic flavors and traditional recipes.</p>
-                                <div class="post-meta">
-                                    <span><i class="far fa-calendar"></i> Jan 5, 2024</span>
-                                    <span><i class="far fa-clock"></i> 9 min read</span>
-                                </div>
-                                <a href="#" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </article>
-
-                        <!-- Post 5 -->
-                        <article class="blog-post-card" data-category="culture">
-                            <div class="blog-post-image">
-                                <img src="images/about-hero.jpg" alt="Indian Festivals">
-                            </div>
-                            <div class="blog-post-content">
-                                <span class="post-category">Culture</span>
-                                <h3>Cultural Festivals of India: A Complete Calendar</h3>
-                                <p>Plan your travels around India's vibrant festivals and experience the rich cultural heritage firsthand.</p>
-                                <div class="post-meta">
-                                    <span><i class="far fa-calendar"></i> Jan 3, 2024</span>
-                                    <span><i class="far fa-clock"></i> 10 min read</span>
-                                </div>
-                                <a href="#" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </article>
-
-                        <!-- Post 6 -->
-                        <article class="blog-post-card" data-category="destinations">
-                            <div class="blog-post-image">
-                                <img src="images/hotel-hero.jpg" alt="Travel Destinations">
-                            </div>
-                            <div class="blog-post-content">
-                                <span class="post-category">Destinations</span>
-                                <h3>Off the Beaten Path: Unexplored Indian Destinations</h3>
-                                <p>Venture beyond popular tourist spots and discover India's hidden treasures that promise unique and memorable experiences.</p>
-                                <div class="post-meta">
-                                    <span><i class="far fa-calendar"></i> Jan 1, 2024</span>
-                                    <span><i class="far fa-clock"></i> 12 min read</span>
-                                </div>
-                                <a href="#" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </article>
+                <!-- Travel Tips Section -->
+                <div class="blog-section" id="travelTipsSection">
+                    <div class="section-header">
+                        <h2><i class="fas fa-lightbulb"></i> Travel Tips</h2>
+                        <button class="view-all-btn" data-category="travel-tips">View All <i class="fas fa-arrow-right"></i></button>
                     </div>
-
-                    <!-- No Results Message -->
-                    <div id="noResults" class="no-results hidden">
-                        <p>No articles found matching your criteria. Try adjusting your filters.</p>
+                    <div class="articles-grid-3">
+                        <article class="article-card" data-category="travel-tips">
+                            <div class="article-card-image">
+                                <img src="images/hero-manali.jpg" alt="Packing Tips">
+                            </div>
+                            <div class="article-card-content">
+                                <span class="article-category">Travel Tips</span>
+                                <h3>10 Essential Packing Tips for Indian Travel</h3>
+                                <p>Master the art of packing light while staying prepared for India's diverse climates.</p>
+                                <div class="article-meta">
+                                    <span><i class="far fa-calendar"></i> Dec 5, 2024</span>
+                                    <span><i class="far fa-clock"></i> 6 min</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article-card" data-category="travel-tips">
+                            <div class="article-card-image">
+                                <img src="images/hero-rajasthan.jpg" alt="Budget Travel">
+                            </div>
+                            <div class="article-card-content">
+                                <span class="article-category">Travel Tips</span>
+                                <h3>Budget Travel Secrets: Explore India Under ₹1000/Day</h3>
+                                <p>Discover insider tips to experience incredible India without breaking the bank.</p>
+                                <div class="article-meta">
+                                    <span><i class="far fa-calendar"></i> Dec 3, 2024</span>
+                                    <span><i class="far fa-clock"></i> 8 min</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article-card" data-category="travel-tips">
+                            <div class="article-card-image">
+                                <img src="images/hero-kerala.jpg" alt="Solo Travel">
+                            </div>
+                            <div class="article-card-content">
+                                <span class="article-category">Travel Tips</span>
+                                <h3>Solo Travel Safety Guide for Women in India</h3>
+                                <p>Comprehensive safety tips and must-know advice for women traveling alone.</p>
+                                <div class="article-meta">
+                                    <span><i class="far fa-calendar"></i> Dec 1, 2024</span>
+                                    <span><i class="far fa-clock"></i> 10 min</span>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
-                <!-- Sidebar -->
-                <aside class="blog-sidebar">
-                    <!-- Popular Posts -->
-                    <div class="sidebar-widget">
-                        <h3><i class="fas fa-fire"></i> Popular Posts</h3>
-                        <div class="popular-posts">
-                            <div class="popular-post-item">
-                                <h4>Top 10 Budget Travel Destinations in India</h4>
-                                <span class="post-views">12.5K views</span>
+                <!-- Destination Guides Section -->
+                <div class="blog-section" id="destinationGuidesSection">
+                    <div class="section-header">
+                        <h2><i class="fas fa-compass"></i> Destination Guides</h2>
+                        <button class="view-all-btn" data-category="destination-guides">View All <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <div class="articles-grid-4">
+                        <article class="article-card-compact" data-category="destination-guides">
+                            <div class="article-card-image">
+                                <img src="images/hero-kerala.jpg" alt="Kerala Guide">
                             </div>
-                            <div class="popular-post-item">
-                                <h4>Essential Packing Tips for Mountain Treks</h4>
-                                <span class="post-views">10.2K views</span>
+                            <div class="article-card-content">
+                                <span class="article-category">Destination Guides</span>
+                                <h3>Kerala Backwaters: A Complete Guide</h3>
+                                <div class="article-meta">
+                                    <span><i class="far fa-calendar"></i> Nov 25</span>
+                                    <span><i class="far fa-clock"></i> 12 min</span>
+                                </div>
                             </div>
-                            <div class="popular-post-item">
-                                <h4>How to Travel Solo in India Safely</h4>
-                                <span class="post-views">9.8K views</span>
+                        </article>
+                        <article class="article-card-compact" data-category="destination-guides">
+                            <div class="article-card-image">
+                                <img src="images/hero-rajasthan.jpg" alt="Rajasthan Guide">
                             </div>
-                            <div class="popular-post-item">
-                                <h4>Best Photography Spots in the Himalayas</h4>
-                                <span class="post-views">8.5K views</span>
+                            <div class="article-card-content">
+                                <span class="article-category">Destination Guides</span>
+                                <h3>Rajasthan Heritage Tour: Palace to Palace</h3>
+                                <div class="article-meta">
+                                    <span><i class="far fa-calendar"></i> Nov 22</span>
+                                    <span><i class="far fa-clock"></i> 14 min</span>
+                                </div>
                             </div>
+                        </article>
+                        <article class="article-card-compact" data-category="destination-guides">
+                            <div class="article-card-image">
+                                <img src="images/hero-goa.jpg" alt="Goa Guide">
+                            </div>
+                            <div class="article-card-content">
+                                <span class="article-category">Destination Guides</span>
+                                <h3>Goa Beyond Beaches: Hidden Experiences</h3>
+                                <div class="article-meta">
+                                    <span><i class="far fa-calendar"></i> Nov 20</span>
+                                    <span><i class="far fa-clock"></i> 10 min</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article-card-compact" data-category="destination-guides">
+                            <div class="article-card-image">
+                                <img src="images/hero-manali.jpg" alt="Manali Guide">
+                            </div>
+                            <div class="article-card-content">
+                                <span class="article-category">Destination Guides</span>
+                                <h3>Manali Adventure Guide: Complete Itinerary</h3>
+                                <div class="article-meta">
+                                    <span><i class="far fa-calendar"></i> Nov 18</span>
+                                    <span><i class="far fa-clock"></i> 11 min</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Seasonal Travel Section -->
+                <div class="blog-section seasonal-section" id="seasonalTravelSection">
+                    <div class="section-header">
+                        <h2><i class="fas fa-sun"></i> Seasonal Travel Recommendations</h2>
+                        <button class="view-all-btn" data-category="seasonal-travel">View All <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <div class="seasonal-grid">
+                        <article class="seasonal-card" data-category="seasonal-travel">
+                            <div class="seasonal-card-image">
+                                <img src="images/hero-manali.jpg" alt="Winter Travel">
+                                <div class="season-badge">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Winter</span>
+                                </div>
+                            </div>
+                            <div class="seasonal-card-content">
+                                <h3>Winter Wonderland: Best December Destinations</h3>
+                                <div class="article-meta">
+                                    <span><i class="far fa-clock"></i> 8 min read</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="seasonal-card" data-category="seasonal-travel">
+                            <div class="seasonal-card-image">
+                                <img src="images/hero-kerala.jpg" alt="Monsoon Travel">
+                                <div class="season-badge monsoon">
+                                    <i class="fas fa-cloud-rain"></i>
+                                    <span>Monsoon</span>
+                                </div>
+                            </div>
+                            <div class="seasonal-card-content">
+                                <h3>Monsoon Magic: Rainy Season Travel Guide</h3>
+                                <div class="article-meta">
+                                    <span><i class="far fa-clock"></i> 9 min read</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="seasonal-card" data-category="seasonal-travel">
+                            <div class="seasonal-card-image">
+                                <img src="images/hero-kashmir.jpg" alt="Summer Travel">
+                                <div class="season-badge summer">
+                                    <i class="fas fa-sun"></i>
+                                    <span>Summer</span>
+                                </div>
+                            </div>
+                            <div class="seasonal-card-content">
+                                <h3>Summer Escapes: Beat the Heat Destinations</h3>
+                                <div class="article-meta">
+                                    <span><i class="far fa-clock"></i> 7 min read</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="seasonal-card" data-category="seasonal-travel">
+                            <div class="seasonal-card-image">
+                                <img src="images/about-hero.jpg" alt="Spring Travel">
+                                <div class="season-badge spring">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Spring</span>
+                                </div>
+                            </div>
+                            <div class="seasonal-card-content">
+                                <h3>Spring Blooms: Flower Festival Destinations</h3>
+                                <div class="article-meta">
+                                    <span><i class="far fa-clock"></i> 6 min read</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Best Time to Visit Section -->
+                <div class="blog-section" id="bestTimeSection">
+                    <div class="section-header">
+                        <h2><i class="fas fa-calendar-alt"></i> Best Time to Visit</h2>
+                        <button class="view-all-btn" data-category="best-time">View All <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <div class="articles-grid-3">
+                        <article class="article-card" data-category="best-time">
+                            <div class="article-card-image">
+                                <img src="images/hero-goa.jpg" alt="Best Time Goa">
+                            </div>
+                            <div class="article-card-content">
+                                <span class="article-category">Best Time to Visit</span>
+                                <h3>Best Time to Visit Goa: Month-by-Month Guide</h3>
+                                <p>Plan your Goa trip perfectly with insights on weather, crowds, and events.</p>
+                                <div class="article-meta">
+                                    <span><i class="far fa-calendar"></i> Nov 15, 2024</span>
+                                    <span><i class="far fa-clock"></i> 10 min</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article-card" data-category="best-time">
+                            <div class="article-card-image">
+                                <img src="images/hero-kashmir.jpg" alt="Best Time Kashmir">
+                            </div>
+                            <div class="article-card-content">
+                                <span class="article-category">Best Time to Visit</span>
+                                <h3>When to Visit Kashmir: Seasonal Comparison</h3>
+                                <p>Compare spring tulips, summer meadows, autumn colors, and winter snow.</p>
+                                <div class="article-meta">
+                                    <span><i class="far fa-calendar"></i> Nov 10, 2024</span>
+                                    <span><i class="far fa-clock"></i> 12 min</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article-card" data-category="best-time">
+                            <div class="article-card-image">
+                                <img src="images/hero-manali.jpg" alt="Best Time Ladakh">
+                            </div>
+                            <div class="article-card-content">
+                                <span class="article-category">Best Time to Visit</span>
+                                <h3>Ladakh Travel Calendar: Best Months Revealed</h3>
+                                <p>Navigate Ladakh's extreme climate with our detailed planning guide.</p>
+                                <div class="article-meta">
+                                    <span><i class="far fa-calendar"></i> Nov 5, 2024</span>
+                                    <span><i class="far fa-clock"></i> 11 min</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- News & Updates Section -->
+                <div class="blog-section" id="newsSection">
+                    <div class="section-header">
+                        <h2><i class="fas fa-newspaper"></i> News & Updates</h2>
+                        <button class="view-all-btn" data-category="news">View All <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <div class="news-grid">
+                        <article class="news-card" data-category="news">
+                            <div class="news-card-image">
+                                <img src="images/hero-kashmir.jpg" alt="Leh Flights">
+                                <span class="new-badge">New</span>
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-newspaper"></i> December 6, 2024
+                                </div>
+                                <h3>New Direct Flights to Leh Announced for 2025</h3>
+                                <p>Major airlines expand connectivity to Ladakh with new routes from major cities.</p>
+                            </div>
+                        </article>
+                        <article class="news-card" data-category="news">
+                            <div class="news-card-image">
+                                <img src="images/hero-goa.jpg" alt="Goa Eco">
+                                <span class="new-badge">New</span>
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-newspaper"></i> December 4, 2024
+                                </div>
+                                <h3>Goa Tourism Launches Eco-Friendly Initiative</h3>
+                                <p>New sustainability program aims to make Goa a model destination.</p>
+                            </div>
+                        </article>
+                        <article class="news-card" data-category="news">
+                            <div class="news-card-image">
+                                <img src="images/hero-kerala.jpg" alt="Kerala Wellness">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-newspaper"></i> December 2, 2024
+                                </div>
+                                <h3>Kerala Wins Best Wellness Destination Award</h3>
+                                <p>God's Own Country recognized globally for Ayurvedic tourism.</p>
+                            </div>
+                        </article>
+                        <article class="news-card" data-category="news">
+                            <div class="news-card-image">
+                                <img src="images/hero-rajasthan.jpg" alt="Rajasthan Heritage">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-newspaper"></i> November 30, 2024
+                                </div>
+                                <h3>Rajasthan Palace Hotels Introduce Heritage Walks</h3>
+                                <p>Experience royal history with new guided heritage experiences.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtered View -->
+            <div id="filteredView" class="hidden">
+                <div class="filtered-view-layout">
+                    <div class="filtered-main">
+                        <div class="filtered-header">
+                            <h2 id="filteredTitle">Travel Tips</h2>
+                            <span class="articles-count" id="articlesCount">0 Articles</span>
+                        </div>
+                        <div class="articles-grid-2" id="filteredArticlesGrid">
+                            <!-- Filtered articles will be inserted here -->
+                        </div>
+                        <div id="noResults" class="no-results hidden">
+                            <i class="fas fa-search"></i>
+                            <p>No articles found matching your criteria.</p>
+                            <button class="btn btn-outline" id="clearFiltersBtn">Clear Filters</button>
                         </div>
                     </div>
 
-                    <!-- Newsletter -->
-                    <div class="sidebar-widget newsletter-widget">
-                        <h3><i class="fas fa-envelope"></i> Newsletter</h3>
-                        <p>Get the latest travel tips and destination guides delivered to your inbox.</p>
-                        <form id="newsletterForm" class="newsletter-form">
-                            <input type="email" placeholder="Your email address" required>
-                            <button type="submit" class="btn btn-primary">Subscribe</button>
-                        </form>
-                    </div>
-
-                    <!-- Categories -->
-                    <div class="sidebar-widget">
-                        <h3>Categories</h3>
-                        <div class="sidebar-categories">
-                            <button class="sidebar-category-btn" data-category="destinations">
-                                <span>Destinations</span>
-                                <span class="category-count">2</span>
-                            </button>
-                            <button class="sidebar-category-btn" data-category="travel-tips">
-                                <span>Travel Tips</span>
-                                <span class="category-count">2</span>
-                            </button>
-                            <button class="sidebar-category-btn" data-category="culture">
-                                <span>Culture</span>
-                                <span class="category-count">1</span>
-                            </button>
-                            <button class="sidebar-category-btn" data-category="adventure">
-                                <span>Adventure</span>
-                                <span class="category-count">1</span>
-                            </button>
-                            <button class="sidebar-category-btn" data-category="food">
-                                <span>Food & Cuisine</span>
-                                <span class="category-count">1</span>
-                            </button>
+                    <!-- Sidebar -->
+                    <aside class="blog-sidebar-new">
+                        <div class="sidebar-widget">
+                            <h3><i class="fas fa-fire"></i> Popular Posts</h3>
+                            <div class="popular-posts">
+                                <div class="popular-post-item">
+                                    <h4>Top 10 Budget Travel Destinations in India</h4>
+                                    <span class="post-views">12.5K views</span>
+                                </div>
+                                <div class="popular-post-item">
+                                    <h4>Essential Packing Tips for Mountain Treks</h4>
+                                    <span class="post-views">10.2K views</span>
+                                </div>
+                                <div class="popular-post-item">
+                                    <h4>How to Travel Solo in India Safely</h4>
+                                    <span class="post-views">9.8K views</span>
+                                </div>
+                                <div class="popular-post-item">
+                                    <h4>Best Photography Spots in the Himalayas</h4>
+                                    <span class="post-views">8.5K views</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </aside>
+
+                        <div class="sidebar-widget newsletter-widget">
+                            <h3><i class="fas fa-envelope"></i> Newsletter</h3>
+                            <p>Get the latest travel tips and guides delivered to your inbox weekly.</p>
+                            <form id="sidebarNewsletterForm" class="newsletter-form">
+                                <input type="email" placeholder="Your email address" required>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3>Categories</h3>
+                            <div class="sidebar-categories-new">
+                                <button class="sidebar-cat-btn" data-category="travel-tips">
+                                    <span><i class="fas fa-lightbulb"></i> Travel Tips</span>
+                                    <span class="cat-count">3</span>
+                                </button>
+                                <button class="sidebar-cat-btn" data-category="destination-guides">
+                                    <span><i class="fas fa-compass"></i> Destination Guides</span>
+                                    <span class="cat-count">4</span>
+                                </button>
+                                <button class="sidebar-cat-btn" data-category="seasonal-travel">
+                                    <span><i class="fas fa-sun"></i> Seasonal Travel</span>
+                                    <span class="cat-count">4</span>
+                                </button>
+                                <button class="sidebar-cat-btn" data-category="best-time">
+                                    <span><i class="fas fa-calendar-alt"></i> Best Time to Visit</span>
+                                    <span class="cat-count">3</span>
+                                </button>
+                                <button class="sidebar-cat-btn" data-category="news">
+                                    <span><i class="fas fa-newspaper"></i> News & Updates</span>
+                                    <span class="cat-count">4</span>
+                                </button>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+            <!-- Newsletter CTA -->
+            <div class="newsletter-cta">
+                <i class="fas fa-envelope"></i>
+                <h2>Stay Updated with Travel Insights</h2>
+                <p>Subscribe to our newsletter and receive weekly travel tips, destination guides, and exclusive offers directly in your inbox.</p>
+                <form id="ctaNewsletterForm" class="newsletter-cta-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-secondary">Subscribe <i class="fas fa-arrow-right"></i></button>
+                </form>
             </div>
         </div>
     </section>
@@ -322,27 +575,25 @@
                     <ul>
                         <li><a href="contact.html">Contact Us</a></li>
                         <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h4>Contact Info</h4>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-phone"></i> +91 123 456 7890</li>
-                        <li><i class="fas fa-envelope"></i> info@travelworld.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
-                    </ul>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Mumbai, India</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@travelworld.com</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p>&copy; 2024 TravelWorld. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="/privacy.html">Privacy Policy</a>
-                    <a href="/terms.html">Terms of Service</a>
-                    <a href="/refund.html">Refund Policy</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="refund.html">Refund Policy</a>
                 </div>
             </div>
         </div>
