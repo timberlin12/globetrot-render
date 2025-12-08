@@ -15,6 +15,7 @@ import TransportDetail from "./pages/TransportDetail";
 import Checkout from "./pages/Checkout";
 import ThankYou from "./pages/ThankYou";
 import Blog from "./pages/Blog";
+import Testimonials from "./pages/Testimonials";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/thankyou" element={<ThankYou />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/refund" element={<RefundPolicy />} />
