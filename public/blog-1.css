@@ -1229,3 +1229,28 @@
     margin: 0;
     opacity: 1;
 }
+
+/* Article Card Links */
+.blog-article-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.blog-article-card-link:hover .blog-article-card,
+.blog-article-card-link:hover .blog-seasonal-card,
+.blog-article-card-link:hover .blog-news-card {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+.blog-article-card-link:hover h3 {
+    color: var(--blog-primary);
+}
+
+.blog-article-card-link:hover .blog-article-image img,
+.blog-article-card-link:hover .blog-seasonal-image img,
+.blog-article-card-link:hover .blog-news-image img {
+    transform: scale(1.1);
+}
