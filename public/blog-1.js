@@ -257,27 +257,29 @@ function formatDate(dateStr, format = 'short') {
 // Create Article Card HTML
 function createArticleCard(article, compact = false) {
     return `
-        <div class="blog-article-card">
-            <div class="blog-article-image ${compact ? 'compact' : ''}">
-                <img src="${article.image}" alt="${article.title}">
-                ${article.isNew ? '<span class="blog-article-new-badge">New</span>' : ''}
-            </div>
-            <div class="blog-article-content ${compact ? 'compact' : ''}">
-                <span class="blog-article-category">${article.category}</span>
-                <h3 class="${compact ? 'compact' : ''}">${article.title}</h3>
-                ${!compact ? `<p class="blog-article-excerpt">${article.excerpt}</p>` : ''}
-                <div class="blog-article-meta">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                        ${formatDate(article.date)}
-                    </span>
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        ${article.readTime}
-                    </span>
+        <a href="blog-detail.html?id=${article.id}" class="blog-article-card-link">
+            <div class="blog-article-card">
+                <div class="blog-article-image ${compact ? 'compact' : ''}">
+                    <img src="${article.image}" alt="${article.title}">
+                    ${article.isNew ? '<span class="blog-article-new-badge">New</span>' : ''}
+                </div>
+                <div class="blog-article-content ${compact ? 'compact' : ''}">
+                    <span class="blog-article-category">${article.category}</span>
+                    <h3 class="${compact ? 'compact' : ''}">${article.title}</h3>
+                    ${!compact ? `<p class="blog-article-excerpt">${article.excerpt}</p>` : ''}
+                    <div class="blog-article-meta">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                            ${formatDate(article.date)}
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            ${article.readTime}
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
+        </a>
     `;
 }
 
@@ -285,43 +287,47 @@ function createArticleCard(article, compact = false) {
 function createSeasonalCard(article) {
     const iconSvg = seasonIcons[article.icon] || seasonIcons.sun;
     return `
-        <div class="blog-seasonal-card">
-            <div class="blog-seasonal-image">
-                <img src="${article.image}" alt="${article.title}">
-                <div class="blog-seasonal-image-overlay"></div>
-                <div class="blog-seasonal-badge">
-                    <div class="blog-seasonal-icon">${iconSvg}</div>
-                    <span class="blog-seasonal-name">${article.season}</span>
+        <a href="blog-detail.html?id=${article.id}" class="blog-article-card-link">
+            <div class="blog-seasonal-card">
+                <div class="blog-seasonal-image">
+                    <img src="${article.image}" alt="${article.title}">
+                    <div class="blog-seasonal-image-overlay"></div>
+                    <div class="blog-seasonal-badge">
+                        <div class="blog-seasonal-icon">${iconSvg}</div>
+                        <span class="blog-seasonal-name">${article.season}</span>
+                    </div>
+                </div>
+                <div class="blog-seasonal-content">
+                    <h3>${article.title}</h3>
+                    <div class="blog-seasonal-meta">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        ${article.readTime}
+                    </div>
                 </div>
             </div>
-            <div class="blog-seasonal-content">
-                <h3>${article.title}</h3>
-                <div class="blog-seasonal-meta">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    ${article.readTime}
-                </div>
-            </div>
-        </div>
+        </a>
     `;
 }
 
 // Create News Card HTML
 function createNewsCard(article) {
     return `
-        <div class="blog-news-card">
-            <div class="blog-news-image">
-                <img src="${article.image}" alt="${article.title}">
-                ${article.isNew ? '<span class="blog-news-badge">New</span>' : ''}
-            </div>
-            <div class="blog-news-content">
-                <div class="blog-news-meta">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
-                    <span>${formatDate(article.date, 'long')}</span>
+        <a href="blog-detail.html?id=${article.id}" class="blog-article-card-link">
+            <div class="blog-news-card">
+                <div class="blog-news-image">
+                    <img src="${article.image}" alt="${article.title}">
+                    ${article.isNew ? '<span class="blog-news-badge">New</span>' : ''}
                 </div>
-                <h3>${article.title}</h3>
-                <p class="blog-news-excerpt">${article.excerpt}</p>
+                <div class="blog-news-content">
+                    <div class="blog-news-meta">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+                        <span>${formatDate(article.date, 'long')}</span>
+                    </div>
+                    <h3>${article.title}</h3>
+                    <p class="blog-news-excerpt">${article.excerpt}</p>
+                </div>
             </div>
-        </div>
+        </a>
     `;
 }
 

@@ -377,9 +377,11 @@ const Blog = () => {
                             {featuredArticle.readTime}
                           </span>
                         </div>
-                        <Button className="w-fit" size="lg">
-                          Read Full Guide <ArrowRight className="ml-2 w-4 h-4" />
-                        </Button>
+                        <Link to={`/blog/${featuredArticle.id}`}>
+                          <Button className="w-fit" size="lg">
+                            Read Full Guide <ArrowRight className="ml-2 w-4 h-4" />
+                          </Button>
+                        </Link>
                       </CardContent>
                     </div>
                   </Card>
@@ -623,97 +625,103 @@ interface Article {
 }
 
 const ArticleCard = ({ article, compact = false }: { article: Article; compact?: boolean }) => (
-  <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 group h-full">
-    <div className={`relative ${compact ? 'h-36' : 'h-48'} overflow-hidden`}>
-      <img
-        src={article.image}
-        alt={article.title}
-        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-      />
-      {article.isNew && (
-        <Badge className="absolute top-3 left-3 bg-red-500 text-white">New</Badge>
-      )}
-    </div>
-    <CardContent className={compact ? 'p-4' : 'p-6'}>
-      <Badge className="mb-2" variant="secondary">{article.category}</Badge>
-      <h3 className={`font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors ${compact ? 'text-base' : 'text-lg'}`}>
-        {article.title}
-      </h3>
-      {!compact && (
-        <p className="text-muted-foreground mb-4 line-clamp-2 text-sm">
-          {article.excerpt}
-        </p>
-      )}
-      <div className="flex items-center gap-3 text-xs text-muted-foreground">
-        <span className="flex items-center gap-1">
-          <Calendar className="w-3 h-3" />
-          {new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-        </span>
-        <span className="flex items-center gap-1">
-          <Clock className="w-3 h-3" />
-          {article.readTime}
-        </span>
+  <Link to={`/blog/${article.id}`} className="block h-full">
+    <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 group h-full">
+      <div className={`relative ${compact ? 'h-36' : 'h-48'} overflow-hidden`}>
+        <img
+          src={article.image}
+          alt={article.title}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+        {article.isNew && (
+          <Badge className="absolute top-3 left-3 bg-red-500 text-white">New</Badge>
+        )}
       </div>
-    </CardContent>
-  </Card>
+      <CardContent className={compact ? 'p-4' : 'p-6'}>
+        <Badge className="mb-2" variant="secondary">{article.category}</Badge>
+        <h3 className={`font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors ${compact ? 'text-base' : 'text-lg'}`}>
+          {article.title}
+        </h3>
+        {!compact && (
+          <p className="text-muted-foreground mb-4 line-clamp-2 text-sm">
+            {article.excerpt}
+          </p>
+        )}
+        <div className="flex items-center gap-3 text-xs text-muted-foreground">
+          <span className="flex items-center gap-1">
+            <Calendar className="w-3 h-3" />
+            {new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+          </span>
+          <span className="flex items-center gap-1">
+            <Clock className="w-3 h-3" />
+            {article.readTime}
+          </span>
+        </div>
+      </CardContent>
+    </Card>
+  </Link>
 );
 
 // Seasonal Card Component
 const SeasonalCard = ({ article }: { article: Article }) => {
   const IconComponent = article.icon || Sun;
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 group h-full bg-card">
+    <Link to={`/blog/${article.id}`} className="block h-full">
+      <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 group h-full bg-card">
+        <div className="relative h-32 overflow-hidden">
+          <img
+            src={article.image}
+            alt={article.title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute bottom-3 left-3 flex items-center gap-2">
+            <div className="w-8 h-8 rounded-full bg-white/90 flex items-center justify-center">
+              <IconComponent className="w-4 h-4 text-primary" />
+            </div>
+            <span className="text-white font-semibold text-sm">{article.season}</span>
+          </div>
+        </div>
+        <CardContent className="p-4">
+          <h3 className="font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors text-sm">
+            {article.title}
+          </h3>
+          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+            <Clock className="w-3 h-3" />
+            {article.readTime}
+          </div>
+        </CardContent>
+      </Card>
+    </Link>
+  );
+};
+
+// News Card Component
+const NewsCard = ({ article }: { article: Article }) => (
+  <Link to={`/blog/${article.id}`} className="block h-full">
+    <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 group h-full">
       <div className="relative h-32 overflow-hidden">
         <img
           src={article.image}
           alt={article.title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        <div className="absolute bottom-3 left-3 flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-white/90 flex items-center justify-center">
-            <IconComponent className="w-4 h-4 text-primary" />
-          </div>
-          <span className="text-white font-semibold text-sm">{article.season}</span>
-        </div>
+        {article.isNew && (
+          <Badge className="absolute top-2 left-2 bg-red-500 text-white text-xs">New</Badge>
+        )}
       </div>
       <CardContent className="p-4">
+        <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+          <Newspaper className="w-3 h-3" />
+          <span>{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+        </div>
         <h3 className="font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors text-sm">
           {article.title}
         </h3>
-        <div className="flex items-center gap-2 text-xs text-muted-foreground">
-          <Clock className="w-3 h-3" />
-          {article.readTime}
-        </div>
+        <p className="text-muted-foreground text-xs line-clamp-2">{article.excerpt}</p>
       </CardContent>
     </Card>
-  );
-};
-
-// News Card Component
-const NewsCard = ({ article }: { article: Article }) => (
-  <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 group h-full">
-    <div className="relative h-32 overflow-hidden">
-      <img
-        src={article.image}
-        alt={article.title}
-        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-      />
-      {article.isNew && (
-        <Badge className="absolute top-2 left-2 bg-red-500 text-white text-xs">New</Badge>
-      )}
-    </div>
-    <CardContent className="p-4">
-      <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-        <Newspaper className="w-3 h-3" />
-        <span>{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-      </div>
-      <h3 className="font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors text-sm">
-        {article.title}
-      </h3>
-      <p className="text-muted-foreground text-xs line-clamp-2">{article.excerpt}</p>
-    </CardContent>
-  </Card>
+  </Link>
 );
 
 export default Blog;
