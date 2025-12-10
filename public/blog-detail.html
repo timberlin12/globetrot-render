@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Article | TravelWorld</title>
+    <meta name="description" content="Read our comprehensive travel guide and tips for your next adventure in India.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog-1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Blog Detail Specific Styles */
+        .blog-detail-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .blog-detail-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-image: url('images/hero-kashmir.jpg');
+        }
+        
+        .blog-detail-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.4), transparent);
+            z-index: 1;
+        }
+        
+        .blog-detail-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+        }
+        
+        .blog-detail-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .blog-detail-back-link:hover {
+            color: white;
+        }
+        
+        .blog-detail-category {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(var(--primary-rgb), 0.8);
+            color: white;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-detail-hero h1 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .blog-detail-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+        
+        .blog-detail-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Main Content */
+        .blog-detail-main {
+            padding: 4rem 0;
+        }
+        
+        .blog-detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .blog-detail-container {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+        
+        /* Share Bar */
+        .blog-share-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: var(--bg-muted);
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .blog-share-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .blog-share-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 0.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-share-btn:hover {
+            background: var(--bg-card);
+            color: var(--primary);
+        }
+        
+        .blog-share-social {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .blog-share-social span {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .blog-social-btn {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            background: transparent;
+            border-radius: 0.25rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-social-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        /* Article Content */
+        .blog-article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+        
+        .blog-article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 2rem 0 1rem;
+        }
+        
+        .blog-article-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 1.5rem 0 0.75rem;
+        }
+        
+        .blog-article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .blog-article-content ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+        
+        .blog-article-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-article-content strong {
+            color: var(--text);
+        }
+        
+        /* Tags */
+        .blog-tags {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .blog-tags i {
+            color: var(--text-muted);
+        }
+        
+        .blog-tag {
+            padding: 0.4rem 0.8rem;
+            background: var(--bg-muted);
+            color: var(--text-muted);
+            border-radius: 0.25rem;
+            font-size: 0.85rem;
+            text-transform: capitalize;
+        }
+        
+        /* Author Card */
+        .blog-author-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .blog-author-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .blog-author-info h3 {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .blog-author-role {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-author-bio {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Article Navigation */
+        .blog-article-nav {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .blog-article-nav {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .blog-nav-card {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-nav-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .blog-nav-card.next {
+            text-align: right;
+            justify-content: flex-end;
+        }
+        
+        .blog-nav-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        
+        .blog-nav-title {
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .blog-nav-card:hover .blog-nav-title {
+            color: var(--primary);
+        }
+        
+        /* Sidebar */
+        .blog-detail-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .blog-sidebar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+        
+        .blog-sidebar-card h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .blog-toc-nav a {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .blog-toc-nav a:hover {
+            color: var(--primary);
+        }
+        
+        /* Related Articles */
+        .blog-related-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .blog-related-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .blog-related-img {
+            width: 80px;
+            height: 64px;
+            border-radius: 0.25rem;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .blog-related-title {
+            font-weight: 500;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: color 0.3s ease;
+        }
+        
+        .blog-related-item:hover .blog-related-title {
+            color: var(--primary);
+        }
+        
+        .blog-related-time {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+        
+        /* Categories */
+        .blog-cat-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .blog-cat-link:hover {
+            color: var(--primary);
+        }
+        
+        /* Newsletter Card */
+        .blog-newsletter-card {
+            background: var(--primary);
+            border: none;
+        }
+        
+        .blog-newsletter-card h3 {
+            color: white;
+        }
+        
+        .blog-newsletter-card p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-newsletter-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 0.25rem;
+            color: white;
+            margin-bottom: 0.75rem;
+        }
+        
+        .blog-newsletter-input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .blog-newsletter-btn {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 0.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-newsletter-btn:hover {
+            background: var(--bg-muted);
+        }
+        
+        @media (max-width: 768px) {
+            .blog-detail-hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .blog-share-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .blog-article-content {
+                font-size: 1rem;
+            }
+            
+            .blog-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .blog-author-avatar {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✈</span>
+                <span class="logo-text">TravelWorld</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="hotels.html">Hotels</a></li>
+                <li><a href="transport.html">Transport</a></li>
+                <li><a href="blog-1.html" class="active">Blog</a></li>
+                <li><a href="testimonials.html">Reviews</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="btn-book">Book Now</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="blog-detail-hero">
+        <div class="blog-detail-hero-overlay"></div>
+        <div class="blog-detail-hero-bg" id="heroBackground"></div>
+        <div class="blog-detail-hero-content">
+            <a href="blog-1.html" class="blog-detail-back-link">
+                <i class="fas fa-arrow-left"></i> Back to Blog
+            </a>
+            <span class="blog-detail-category" id="articleCategory">Travel Tips</span>
+            <h1 id="articleTitle">10 Essential Packing Tips for Indian Travel</h1>
+            <div class="blog-detail-meta">
+                <span><i class="fas fa-user"></i> <span id="articleAuthor">Priya Sharma</span></span>
+                <span><i class="fas fa-calendar"></i> <span id="articleDate">December 5, 2024</span></span>
+                <span><i class="fas fa-clock"></i> <span id="articleReadTime">6 min read</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="blog-detail-main">
+        <div class="blog-detail-container">
+            <!-- Article Content -->
+            <article class="blog-detail-article">
+                <!-- Share Bar -->
+                <div class="blog-share-bar">
+                    <div class="blog-share-actions">
+                        <button class="blog-share-btn"><i class="fas fa-heart"></i> 245</button>
+                        <button class="blog-share-btn"><i class="fas fa-comment"></i> 32</button>
+                        <button class="blog-share-btn"><i class="fas fa-bookmark"></i></button>
+                    </div>
+                    <div class="blog-share-social">
+                        <span>Share:</span>
+                        <button class="blog-social-btn"><i class="fab fa-facebook-f"></i></button>
+                        <button class="blog-social-btn"><i class="fab fa-twitter"></i></button>
+                        <button class="blog-social-btn"><i class="fab fa-linkedin-in"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article Body -->
+                <div class="blog-article-content" id="articleContent">
+                    <!-- Content will be loaded by JS -->
+                </div>
+
+                <!-- Tags -->
+                <div class="blog-tags" id="articleTags">
+                    <i class="fas fa-tag"></i>
+                    <!-- Tags will be loaded by JS -->
+                </div>
+
+                <!-- Author Card -->
+                <div class="blog-author-card">
+                    <img src="images/hero-kerala.jpg" alt="Author" class="blog-author-avatar" id="authorImage">
+                    <div class="blog-author-info">
+                        <h3 id="authorName">Priya Sharma</h3>
+                        <p class="blog-author-role">Travel Writer & Photographer</p>
+                        <p class="blog-author-bio">Passionate about exploring India's hidden gems and sharing authentic travel experiences with fellow adventurers.</p>
+                    </div>
+                </div>
+
+                <!-- Article Navigation -->
+                <div class="blog-article-nav" id="articleNav">
+                    <!-- Navigation will be loaded by JS -->
+                </div>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="blog-detail-sidebar">
+                <!-- Table of Contents -->
+                <div class="blog-sidebar-card">
+                    <h3><i class="fas fa-book-open"></i> Table of Contents</h3>
+                    <nav class="blog-toc-nav" id="tableOfContents">
+                        <a href="#">Introduction</a>
+                        <a href="#">Main Points</a>
+                        <a href="#">Tips & Recommendations</a>
+                        <a href="#">Conclusion</a>
+                    </nav>
+                </div>
+
+                <!-- Related Articles -->
+                <div class="blog-sidebar-card">
+                    <h3>Related Articles</h3>
+                    <div id="relatedArticles">
+                        <!-- Related articles will be loaded by JS -->
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="blog-sidebar-card">
+                    <h3>Categories</h3>
+                    <nav>
+                        <a href="blog-1.html?category=Travel+Tips" class="blog-cat-link">
+                            <span>Travel Tips</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <a href="blog-1.html?category=Destination+Guides" class="blog-cat-link">
+                            <span>Destination Guides</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <a href="blog-1.html?category=Seasonal+Travel" class="blog-cat-link">
+                            <span>Seasonal Travel</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <a href="blog-1.html?category=Best+Time+to+Visit" class="blog-cat-link">
+                            <span>Best Time to Visit</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <a href="blog-1.html?category=News+%26+Updates" class="blog-cat-link">
+                            <span>News & Updates</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="blog-sidebar-card blog-newsletter-card">
+                    <h3>Subscribe to Newsletter</h3>
+                    <p>Get travel tips and destination guides delivered to your inbox.</p>
+                    <form id="newsletterForm">
+                        <input type="email" class="blog-newsletter-input" placeholder="Enter your email" required>
+                        <button type="submit" class="blog-newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>TravelWorld</h3>
+                <p>Your trusted partner for unforgettable travel experiences across India. We make your dreams come true with personalized tours and exceptional service.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="hotels.html">Hotels</a></li>
+                    <li><a href="transport.html">Transport</a></li>
+                    <li><a href="blog-1.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Popular Destinations</h4>
+                <ul>
+                    <li><a href="#">Kashmir</a></li>
+                    <li><a href="#">Goa</a></li>
+                    <li><a href="#">Kerala</a></li>
+                    <li><a href="#">Rajasthan</a></li>
+                    <li><a href="#">Manali</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Travel Street, New Delhi, India</li>
+                    <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-envelope"></i> info@travelworld.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TravelWorld. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="refund.html">Refund Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="blog-detail.js"></script>
+</body>
+</html>
