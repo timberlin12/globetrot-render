@@ -15,7 +15,7 @@ import TransportDetail from "./pages/TransportDetail";
 import Checkout from "./pages/Checkout";
 import ThankYou from "./pages/ThankYou";
 import Blog from "./pages/Blog";
-import BlogDetail from "./pages/BlogDetail";
+import BlogDetailNew from "./pages/BlogDetailNew";
 import Testimonials from "./pages/Testimonials";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -43,7 +43,7 @@ const App = () => (
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/thankyou" element={<ThankYou />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogDetail />} />
+          <Route path="/blog/:id" element={<BlogDetailNew />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
