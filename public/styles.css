@@ -5650,16 +5650,114 @@ h4 { font-size: 1.25rem; }
    =============================================== */
 
 /* Blog Hero Section */
-.blog-hero {
+.blog-hero,
+.blog-hero-new {
     position: relative;
-    height: 400px;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-image: url('images/hero-kashmir.jpg');
+    background-image: url('images/blog-hero.jpg');
     background-size: cover;
     background-position: center;
+}
+
+@media (min-width: 768px) {
+    .blog-hero,
+    .blog-hero-new {
+        height: 60vh;
+    }
+}
+
+.blog-hero-new .blog-hero-overlay {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.9), hsl(var(--primary) / 0.8), hsl(var(--accent) / 0.7));
+}
+
+.blog-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    backdrop-filter: blur(8px);
+    margin-bottom: 1rem;
+}
+
+.blog-hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.blog-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.875rem;
+}
+
+.blog-stat i {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media (min-width: 768px) {
+    .blog-hero-stats {
+        gap: 3rem;
+    }
+    
+    .blog-stat {
+        font-size: 1rem;
+    }
+}
+
+/* Blog Categories New */
+.blog-categories-new {
+    padding: 2rem 0;
+    background: hsl(var(--muted));
+    border-bottom: 1px solid hsl(var(--border));
+}
+
+.category-filters-new {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.category-btn-new {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: hsl(var(--background));
+    border: 1px solid hsl(var(--border));
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.category-btn-new:hover {
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+}
+
+.category-btn-new.active {
+    background: hsl(var(--primary));
+    color: white;
+    border-color: hsl(var(--primary));
+}
+
+.category-btn-new i {
+    font-size: 0.875rem;
 }
 
 .blog-hero-overlay {
